@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wrapper {
+    @apply max-w-[1368px] lg:px-28 px-16 mx-auto;
+  }
+  .input {
+    @apply border border-gray-400/60   text-gray-600 font-medium text-sm  outline-none placeholder:text-gray-500 focus:border-transparent focus:ring-4  transition-all ease-in duration-300  gap-3;
+  }

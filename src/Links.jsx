@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
+import SignIn from "./pages/SignIn";
 
 const Links = () => {
   const theme = {
@@ -38,6 +39,9 @@ const Links = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/singleprodcut/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
+
+          <Route path="/signin" element={<SignIn />} />
+
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
