@@ -3,7 +3,7 @@ import React from 'react'
 const PurpleBtn = ({className, children, type}) => {
   return (
     <div>
-      <button className={`${className} bg-purple-950 rounded p-3 text-white text-lg`} type={type}>{children}</button>
+      <button className={`${className} bg-purple-950 rounded px-4 py-2 text-white text-base`} type={type}>{children}</button>
     </div>
   )
 }

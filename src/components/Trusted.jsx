@@ -3,11 +3,11 @@ import React from "react";
 const Trusted = () => {
   return (
     <div>
-      <div className="container bg-slate-200 flex items-center justify-center flex-col pt-8 pb-4">
+      <div className=" bg-slate-200 flex items-center justify-center flex-col pt-8 pb-4 w-full">
         <h3 className=" text-lg font-bold text-gray-600 ">
           Trusted By 1000+ Companies
         </h3>
-        <div className="flex items-center justify-center">
+        <div className="grid md:grid-cols-5 grid-cols-3">
           {/* my 1st img  */}
           <div className="slide">
             <img

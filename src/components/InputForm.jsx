@@ -14,7 +14,7 @@ const InputForm = ({ id, type, label, placeholder, onChange, className, visibleL
       type={type}
       placeholder={label}
       onChange={onChange}
-      className={`${className}  normal-case  input placeholder:font-bold font-open`} />;
+      className={`${className}  normal-case  input placeholder:font-bold font-open  px-2`} />;
     } else {
       contentToRender = <input
       id={id}

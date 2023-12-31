@@ -11,6 +11,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import SignIn from "./pages/SignIn";
+import Footer from "./components/Footer";
 
 const Links = () => {
   const theme = {
@@ -28,9 +29,7 @@ const Links = () => {
     }
   }
   return (
-    <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <GlobalStyle />
         <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -44,8 +43,8 @@ const Links = () => {
 
           <Route path="*" element={<Error />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
-    </ThemeProvider>
   );
 };
 

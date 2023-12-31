@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import Links from './Links'
+import { useState } from "react";
+import Links from "./Links";
+import { AppProvider } from "./context/ProductContex";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-     <Links/>
+        <Links />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
