@@ -1,5 +1,5 @@
 import React from 'react'
-import { useProductContext } from '../context/ProductContex'
+import { useProductContext } from '../context/ProductContext'
 
 const About = () => {
   const {start} = useProductContext();

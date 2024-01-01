@@ -36,11 +36,9 @@ const Links = () => {
           <Route path="/about" element={<About />} />
           <Route path="/product" element={<Product />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/singleprodcut/:id" element={<SingleProduct />} />
+          <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
-
           <Route path="/signin" element={<SignIn />} />
-
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer/>
