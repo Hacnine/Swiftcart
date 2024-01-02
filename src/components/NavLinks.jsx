@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
+import PurpleBtn from "./PurpleBtn"
 const NavLinks = ({className}) => {
   return (
     <div>
-       <ul className={`${className} flex items-center justify-center md:gap-10 sm:gap-5 font-bold uppercase"`}>
+       <ul className={`${className} flex items-center justify-center md:gap-10 sm:gap-5 font-bold uppercase`}>
         <li className=" ">
           <NavLink to="/">Home</NavLink>
         </li>
@@ -15,7 +16,9 @@ const NavLinks = ({className}) => {
           <NavLink to="/contact">Contact</NavLink>
         </li>
         <li>
-          <NavLink to="/signin" className="bg-purple-900 p-2 rounded-md text-white">Sign In</NavLink>
+          <NavLink to="/signin" className=" rounded-md text-white">
+            <PurpleBtn children={"Sign In"} />
+          </NavLink>
         </li>
         <li className=" relative">
           <NavLink to="/cart" className=" text-2xl">
