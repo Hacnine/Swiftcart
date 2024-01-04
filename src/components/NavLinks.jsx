@@ -4,7 +4,7 @@ import PurpleBtn from "./PurpleBtn"
 const NavLinks = ({className}) => {
   return (
     <div>
-       <ul className={`${className} flex items-center justify-center md:gap-10 sm:gap-5 font-bold uppercase`}>
+       <ul className={`${className} flex items-center justify-center md:gap-10 sm:gap-5 font-bold text-gray-700 text-sm uppercase`}>
         <li className=" ">
           <NavLink to="/">Home</NavLink>
         </li>
@@ -23,7 +23,7 @@ const NavLinks = ({className}) => {
         <li className=" relative">
           <NavLink to="/cart" className=" text-2xl">
             <FiShoppingCart className=" z-20" />
-            <span className=" text-xs absolute bg-purple-800 w-5 h-6 rounded-lg -right-3 -top-3 items-center flex justify-center text-white  ">10</span>
+            <span className=" text-xs absolute bg-purple-800 w-5 h-6 rounded-lg -right-3 -top-3 items-center flex justify-center text-white">10</span>
           </NavLink>
         </li>
 

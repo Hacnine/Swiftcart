@@ -5,8 +5,8 @@ import NewsLetter from "./NewsLetter";
 
 const Footer = () => {
   return (
-    <div className=" max-w-[1300px]  mx-auto flex items-center justify-center flex-col w-full relative mt-36">
-      <div className="w-[90%] absolute -top-24 ">
+    <div className=" max-w-screen-2xl  mx-auto flex items-center justify-center flex-col w-full relative mt-36">
+      <div className="w-[90%] absolute md:-top-24 -top-32 ">
         <GetStarted />
       </div>
       <div className="w-full  ">

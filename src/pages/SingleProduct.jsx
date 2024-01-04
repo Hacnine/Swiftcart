@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { useProductContext } from "../context/ProductContext";
 import logo from "../assets/logo2.jpeg";
 import MiniProductCard from "../components/MiniProductCard";
+import SingleProductDetails from "../components/SingleProductDetails";
+import PageNavigation from "../components/PageNavigation";
+import BigImage from "../components/BigImage";
 const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
@@ -27,29 +30,27 @@ const SingleProduct = () => {
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
   }, []);
-  console.log(id);
+  console.log(singleProduct);
+  if (isSingleLoading) {
+    return <div>Loading</div>;
+  }
+
   return (
     <div>
-      <div className="center wrapper md:flex-row flex-col mt-20">
-        <div className="md:w-1/2 w-full">
-          <div className="center md:flex-row flex-col gap-6 w-full border border-black">
-            <div className="md:block sm:hidden">
-              <MiniProductCard />
+      <PageNavigation name={name} />
+      <div className="start wrapper md:flex-row flex-col mt-20 gap-9">
+        <div className="md:w-2/3 w-full">
+          <div className="center lg:flex-row flex-col gap-6 w-full">
+            <div className="">
+              <BigImage images={image} />
             </div>
 
-            <div className="">
-              <img
-                src={logo}
-                alt="Product Image"
-                className=" md:w-[100%] w-full rounded"
-              />
-            </div>
-            <div className="sm:block md:hidden">
-              <MiniProductCard />
-            </div>
+            <MiniProductCard images={image} />
           </div>
         </div>
-        <div className="w-1/2 "></div>
+        <div className="md:w-1/3 w-full ">
+          <SingleProductDetails {...singleProduct} />
+        </div>
       </div>
     </div>
   );

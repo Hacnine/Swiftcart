@@ -15,10 +15,10 @@ const ProductCard = ({ id, name, image, category, price }) => {
             <span className=" absolute right-2 top-2 bg-purple-700 font-semibold text-white text-xs py-1 px-4 flex items-center justify-center capitalize rounded-full">
               {category}
             </span>
-            <div className=" z-30  absolute top-0   w-28  hover:w-[100%] h-[100%] bg-transparent hover:bg-purple-950/35 transition-all translate duration-1000">
+            <div className=" product-effect ">
           </div>
 
-          <div className=" z-30  absolute top-0 right-0   w-16 hover:w-[100%] h-[100%] bg-transparent hover:bg-purple-950/35 transition-all translate duration-1000">
+          <div className="right-0 product-effect ">
           </div>
           </div>
           <div className="flex items-center gap-2 justify-between">
