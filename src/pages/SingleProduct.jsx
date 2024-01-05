@@ -6,6 +6,8 @@ import MiniProductCard from "../components/MiniProductCard";
 import SingleProductDetails from "../components/SingleProductDetails";
 import PageNavigation from "../components/PageNavigation";
 import BigImage from "../components/BigImage";
+import AddToCart from "../components/AddToCart";
+import ColorInputs from "../components/ColorInputs";
 const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
@@ -18,6 +20,7 @@ const SingleProduct = () => {
     id: alias,
     company,
     name,
+    colors,
     price,
     description,
     category,
@@ -26,6 +29,7 @@ const SingleProduct = () => {
     reviews,
     image,
   } = singleProduct;
+  console.log(colors)
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
@@ -50,6 +54,9 @@ const SingleProduct = () => {
         </div>
         <div className="md:w-1/3 w-full ">
           <SingleProductDetails {...singleProduct} />
+
+          {stock > 0 &&
+          <AddToCart product={singleProduct} />}
         </div>
       </div>
     </div>

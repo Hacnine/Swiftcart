@@ -4,10 +4,10 @@ import { quickLinks } from "../constants";
 const FooterLinks = () => {
   return (
     <div className="bg-[#4d425b] p-10 flex items-start justify-between gap-10 sm:flex-row flex-col wrapper">
-      <div className=" flex items-start justify-between   md:w-[60%]">
+      <div className=" flex items-start justify-between  gap-1 md:w-[60%] w-full">
         {quickLinks.map((item, index) => (
           <div
-            className=" w-1/3 flex items-start justify-center flex-col text-white text-xs gap-2"
+            className=" w-1/3 flex items-start justify-evenly flex-col text-white text-xs gap-2"
             key={index+1}>
             <p className="text-base  font-semibold">{item.title}</p>
             {item.links.map((items) => (

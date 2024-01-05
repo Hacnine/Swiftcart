@@ -31,7 +31,8 @@
 }
 
 .product-effect {
-  @apply z-30  absolute top-0   w-16  hover:w-[100%] h-[100%] bg-transparent hover:bg-purple-950/35 transition-all  duration-1000;
+  @apply z-30  absolute top-0   w-5 group-hover:w-[100%] h-[100%] bg-transparent
+  group-hover:bg-purple-950/35  transition-all duration-1000;
 }
 
 .max {
