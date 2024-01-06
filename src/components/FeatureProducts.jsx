@@ -12,11 +12,10 @@ const FeatureProduct = () => {
           <p className="text-xs font-medium text-purple-600">CHECK NOW!</p>
           <h1 className="mb-8 font-bold text-xl text-slate-900">Our Feature Services</h1>
           <div className="  gap-4 grid grid-cols-3 ">
-            {featureProducts.map((product) => (
-              <div key={product.id} className="">
-                <ProductCard {...product}/>
-              </div>
-            ))}
+            {featureProducts.map((product) => {
+              return  <ProductCard {...product}/>
+              
+})}
           </div>
         </div>
       </div>

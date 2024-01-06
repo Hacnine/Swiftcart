@@ -13,8 +13,17 @@ const initialState = {
   featureProducts: [],
   isSingleLoading: false,
   singleProduct: {},
+  mobile:{},
+  laptop:{},
+  accessories:{},
+  watch:{},
+  blackColor:{},
+  whiteColor:{},
+  redColors:{},
+  blueColors:{},
+  yellowColors:{},
+  grayColors:{}
 };
-
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -41,11 +50,25 @@ const AppProvider = ({ children }) => {
     }
   };
 
+
+
+  const getColorBaseProducts = async (url) => {
+    dispatch({ type: "SET_LOADING" });
+    try {
+      const response = await axios.get(url);
+      const products = await response.data;
+      // console.log(response)
+      dispatch({ type: "SET_COLOR_BASE_PRODUCT", payload: products });
+    } catch (error) {
+      dispatch({ type: "API_ERROR" });
+    }
+  };
+
   useEffect(() => {
     getProducts(API);
   }, []);
   return (
-    <AppContext.Provider value={{ ...state, getSingleProduct }}>
+    <AppContext.Provider value={{ ...state, getSingleProduct,getColorBaseProducts }}>
       {children}
     </AppContext.Provider>
   );

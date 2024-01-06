@@ -7,7 +7,7 @@ import minilogo from '../assets/minilogo.svg'
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between bg-slate-200  wrapper">
+    <div className="flex items-center justify-between bg-slate-200  wrapper md:mb-14 mb-10">
       <NavLink to="/">
         {/* <span className=" rounded-tl-3xl bg-purple-950 px-4 py-1 font-bold md:text-2xl text-xl text-white  ">
           {" "}

@@ -1,53 +1,96 @@
+const ProductReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_LOADING":
+      return {
+        ...state,
+        isLoading: true,
+      };
 
-const ProductReducer =  (state,action ) => {
-    switch(action.type){
-        case "SET_LOADING":
-            return {
-                ...state,
-                isLoading:true,
-            };
+    case "SET_API_DATA":
+      const featureData = action.payload.filter((currentElement) => {
+        return currentElement.featured === true;
+      });
 
-        case "SET_API_DATA":
-            const featureData = action.payload.filter((currentElement=>{
-                return currentElement.featured === true;
-            }))
-            return {
-                ...state,
-                isLoading:false,
-                products:action.payload,
-                featureProducts:featureData,
-            }
-        case "API_ERROR":
-            return {
-                ...state,
-                isLoading:false,
-                isError:true,
-            };
-        
-            case "SET_SINGLE_LOADING":
+      const laptopData = action.payload.filter((currentElement) => {
+        return currentElement.category === "laptop";
+      });
 
-            return {
-                ...state,
-                isSingleLoading:true,
-            }
+      const watchData = action.payload.filter((currentElement) => {
+        return currentElement.category === "watch";
+      });
 
-            case "SET_SINGLE_PRODUCT":
+      const accessoriesData = action.payload.filter((currentElement) => {
+        return currentElement.category === "accessories";
+      });
 
-            return {
-                ...state,
-                isSingleLoading:false,
-                singleProduct:action.payload,
-            }
+      const mobileData = action.payload.filter((currentElement) => {
+        return currentElement.category === "mobile";
+      });
 
-            case "SET_SINGLE_ERROR":
+      const targetBlackColor = "#000000";
 
-            return {
-                ...state,
-                isSingleLoading:false,
-                isError:true,
-            }
-    }
-    return state;
-}
+      // Filter products with the specified color
+      const blackProducts = action.payload.filter((product) => {
+        return product.colors.includes(targetBlackColor);
+      });
 
-export default ProductReducer
+      const targetBlueColor = "#22D3EF";
+
+      const blueProducts = action.payload.filter((product) => {
+        return product.colors.includes(targetBlueColor);
+      });
+
+      const targetRedColor = "#ff0000";
+
+      const redProducts = action.payload.filter((product) => {
+        return product.colors.includes(targetRedColor);
+      });
+
+      const targetGreyColor = "#CDD0D0";
+
+      const greyProducts = action.payload.filter((product) => {
+        return product.colors.includes(targetGreyColor);
+      });
+
+      return {
+        ...state,
+        isLoading: false,
+        products: action.payload,
+        featureProducts: featureData,
+        mobile: mobileData,
+        laptop: laptopData,
+        accessories: accessoriesData,
+        watch: watchData,
+        grayColors: greyProducts,
+      };
+    case "API_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
+
+    case "SET_SINGLE_LOADING":
+      return {
+        ...state,
+        isSingleLoading: true,
+      };
+
+    case "SET_SINGLE_PRODUCT":
+      return {
+        ...state,
+        isSingleLoading: false,
+        singleProduct: action.payload,
+      };
+
+    case "SET_SINGLE_ERROR":
+      return {
+        ...state,
+        isSingleLoading: false,
+        isError: true,
+      };
+  }
+  return state;
+};
+
+export default ProductReducer;
