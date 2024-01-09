@@ -6,6 +6,16 @@ export const newsForm = [
     {label:"Phone Number", type:"name", },
   
   ]
+
+  export const category = [
+    {title: "All", link:""},
+    {title: "Mobile", link:""},
+    {title: "Laptop", link:""},
+    {title: "Accessories", link:""},
+    {title: "Watch", link:""},
+
+  ]
+
   export const message = [
     {label:"Message" , type: "textarea",className: "w-full h-52 rounded-md border-green-300 focus:ring-blue-100"},
   ]

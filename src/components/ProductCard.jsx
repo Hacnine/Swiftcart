@@ -6,12 +6,12 @@ const ProductCard = (product) => {
   return (
     <div>
       <NavLink to={`/singleproduct/${id}`}>
-        <div className=" cursor-pointer bg-purple-100 p-2 " key={id}>
-          <div className="group relative  ">
-            <img src={image} alt={category} className=" " />
+        <div className=" cursor-pointer bg-purple-100 p-2 shadow-md" key={id}>
+          <div className="group relative group-hover:scale-110 z-0 ">
+            <img src={image} alt={category} className="" />
 
-            <div className=" product-effect " />
-            <div className=" md:block hidden absolute right-2 top-2 bg-purple-700 font-semibold text-white text-xs py-2 px-4 flex items-center justify-center capitalize rounded-full">
+            <div className=" product-effect group-hover:scale-105 " />
+            <div className="  hidden absolute right-2 top-2 bg-purple-700 font-semibold text-white text-xs py-2 px-4 md:flex items-center justify-center capitalize rounded-full">
               {category}
             </div>
           </div>

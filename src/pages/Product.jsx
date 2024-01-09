@@ -1,35 +1,52 @@
-import ProductCard from '../components/ProductCard';
-import FilterSection from '../components/product/FilterSection';
 import ProductList from '../components/product/ProductList';
-import Sort from '../components/product/Sort';
+import Sidebar from '../components/product/Sidebar';
+import { BiSolidChevronRightCircle } from "react-icons/bi";
 import { useFilterContext } from '../context/filterContext';
+import { useLocation} from "react-router-dom";
+import React, { useEffect, useRef } from "react";
 
 const Product = () => {
-  const {filterProducts} = useFilterContext();
-  console.log('filterProducts',filterProducts);
+  const { sortByCategory} = useFilterContext();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const selectedData = searchParams.get("title");
+  // console.log(selectedData)
+  let secondaryData = selectedData;
+  const prevSelectedDataRef = useRef();
+console.log(location)
+  const setData = ()=>{
+    
+  }
+  useEffect(() => {
+ 
+      if (selectedData) {
+        
+        sortByCategory(selectedData);
+      }
+
+      else{
+        sortByCategory("All")
+      }
+   
+  }, 
+  [location]
+  // [selectedData,sortByCategory]
+  );
+
+
   return (
-    <div className=' wrapper flex items-start justify-between'>
-      <div>
-        <FilterSection/>
+    <>
+      <div className='wrapper flex items-start justify-between'>
+        <div className='w-[22%] gap-4 center shadow-'>
+          <Sidebar />
+          <BiSolidChevronRightCircle className='text-purple-950 h-7 w-7 cursor-pointer' />
+        </div>
+        <div className='w-[78%]'>
+          <ProductList />
+        </div>
       </div>
-      <div>
-        <Sort />
-      </div>
-      <div className="">
-        <ProductList/>
-      </div>
+    </>
+  );
+};
 
-      {/* <div className="  gap-4 grid grid-cols-3">
-            {filterProducts.map((product) => (
-              <div key={product.id} className="">
-                <ProductCard {...product}/>
-              </div>
-            ))}
-          </div> */}
-
-      
-    </div>
-  )
-}
-
-export default Product
+export default Product;

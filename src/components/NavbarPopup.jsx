@@ -13,7 +13,7 @@ const  NavbarPopup = ({ open, onClose, children }) => {
       onClick={onClose}
       className={`
     bg-white rounded-xl shadow  flex items-center justify-center text-xl w-[70%] h-[90%] transition-all
-    ${open ? "scale-100 opacity-100" : " scale-125 opacity-0 "}
+    ${open ? "scale-100 opacity-100 " : " scale-125 opacity-0 "}
     `}
     >
       <button

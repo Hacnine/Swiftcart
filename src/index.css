@@ -23,7 +23,7 @@
 }
 
 .start {
-  @apply flex items-start justify-center;
+  @apply flex items-start justify-start;
 }
 
 .between {

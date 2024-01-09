@@ -12,17 +12,17 @@ const initialState = {
   products: [],
   featureProducts: [],
   isSingleLoading: false,
-  singleProduct: {},
-  mobile:{},
-  laptop:{},
-  accessories:{},
-  watch:{},
-  blackColor:{},
-  whiteColor:{},
-  redColors:{},
-  blueColors:{},
-  yellowColors:{},
-  grayColors:{}
+  singleProduct: [],
+  mobile:[],
+  laptop:[],
+  accessories:[],
+  watch:[],
+  blackColor:[],
+  whiteColor:[],
+  redColors:[],
+  blueColors:[],
+  yellowColors:[],
+  grayColors:[]
 };
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);

@@ -8,7 +8,7 @@ import NavLinks from "./NavLinks";
 const Navbar = () => {
   return (
     <div>
-      <div className="hidden sm:block">
+      <div className="hidden sm:block bg-white">
         <NavLinks/>
       </div>
       <div className="block sm:hidden">

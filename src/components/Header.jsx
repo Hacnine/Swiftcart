@@ -17,9 +17,9 @@ const Header = () => {
           CART
         </span> */}
         <img src={logo} alt=""
-        className="hidden md:block h-20 py-2" />
+        className="hidden md:block h-20  lg:p-2 p-5" />
         <img src={minilogo} alt=""
-        className="block md:hidden h-16 py-2" />
+        className="block md:hidden h-16 p-2" />
       </NavLink>
 
       <Navbar />

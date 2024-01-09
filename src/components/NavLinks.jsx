@@ -4,7 +4,7 @@ import PurpleBtn from "./PurpleBtn"
 const NavLinks = ({className}) => {
   return (
     <div>
-       <ul className={`${className} flex items-center justify-center md:gap-10 sm:gap-5 font-bold text-gray-700 text-sm uppercase`}>
+       <ul className={`${className} bg-slate-200 flex items-center justify-center lg:gap-10 gap-4 font-bold text-gray-700 lg:text-sm text-xs uppercase`}>
         <li className=" ">
           <NavLink to="/">Home</NavLink>
         </li>
