@@ -8,9 +8,9 @@ const initialState = {
   filterProducts: [],
   gridView: true,
   sortedValue: "lowest",
-  filter:{
+  filter: {
     text: "",
-  }
+  },
 };
 const FilterContextProvider = ({ children }) => {
   const { products } = useProductContext();
@@ -20,20 +20,26 @@ const FilterContextProvider = ({ children }) => {
     dispatch({ type: "SET_GRID_VIEW" });
   };
 
-  useEffect (()=>{
-    dispatch({type:"FILTER_PRODUCTS"});
-  }, [state.filter])
+  useEffect(() => {
+    dispatch({ type: "FILTER_PRODUCTS" });
+  }, [state.filter]);
 
   const sortingData = (data) => {
     switch (data.name) {
       case "Price-High to Low":
         console.log("data", data.name);
-        dispatch({ type: "GET_HIGH_TO_LOW_PRICE", payload: state.filterProducts });
+        dispatch({
+          type: "GET_HIGH_TO_LOW_PRICE",
+          payload: state.filterProducts,
+        });
 
         break;
       case "Price-Low to High":
         console.log("data", data.name);
-        dispatch({ type: "GET_LOW_TO_HIGH_PRICE", payload: state.filterProducts });
+        dispatch({
+          type: "GET_LOW_TO_HIGH_PRICE",
+          payload: state.filterProducts,
+        });
         break;
 
       case "Name(A-Z)":
@@ -55,39 +61,45 @@ const FilterContextProvider = ({ children }) => {
   //   return dispatch({type: `SET_${type}_DATA`, payload: payload})
   // }
 
-
-  const updateFilterValue = (event) =>{
+  const updateFilterValue = (event) => {
     let name = event.target.name;
     let value = event.target.value;
-    console.log(state.filter)
-    return dispatch({type:"UPDATE_FILTERS_VALUE", payload:{name, value}})
-  }
+    console.log(state.filter);
+    return dispatch({ type: "UPDATE_FILTERS_VALUE", payload: { name, value } });
+  };
 
+  const getUniqueData = (products, property) => {
+    let newValue = products.map((currentElement) => {
+      return currentElement[property];
+    });
+    return (newValue = ["All", ...new Set(newValue)]);
+  };
 
   const sortByCategory = (data) => {
-    
-
     switch (data) {
       case "All":
         dispatch({ type: "ALL", payload: state.allProducts });
         break;
 
-      case "Mobile":
+      case "mobile":
         dispatch({ type: "SET_MOBILE_DATA", payload: state.allProducts });
         break;
 
-      case "Laptop":
+      case "laptop":
         dispatch({ type: "SET_LAPTOP_DATA", payload: state.allProducts });
         break;
+      case "computer":
+        dispatch({ type: "SET_COMPUTER_DATA", payload: state.allProducts });
+        break;
 
-      case "Accessories":
+      case "accessories":
         dispatch({
           type: "SET_ACCESSORIES_DATA",
           payload: state.allProducts,
         });
         break;
 
-      case "Watch":
+      case "watch":
         console.log(data);
         dispatch({ type: "SET_WATCH_DATA", payload: state.allProducts });
         break;
@@ -95,13 +107,30 @@ const FilterContextProvider = ({ children }) => {
   };
 
 
+  const getColor = (currentColor) => {
+    if (currentColor) {
+      dispatch({
+        type: "GET_COLORED_FILTERS",
+        payload: { currentColor, filterProducts: state.filterProducts }
+      });
+    }
+  };
+
   useEffect(() => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
   }, [products]);
 
   return (
     <FilterContext.Provider
-      value={{ ...state, setGridView, sortingData, sortByCategory, updateFilterValue }}
+      value={{
+        ...state,
+        setGridView,
+        sortingData,
+        sortByCategory,
+        updateFilterValue,
+        getUniqueData,
+        getColor,
+      }}
     >
       {children}
     </FilterContext.Provider>

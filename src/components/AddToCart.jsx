@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import ColorInputs from "./ColorInputs";
-import { FaCheck } from "react-icons/fa";
 import CartAmountToggle from "./CartAmountToggle";
 import PurpleBtn from "./PurpleBtn";
+import ColorButton from "./ColorButton";
+
 import { NavLink } from "react-router-dom";
 
 const AddToCart = ({ product }) => {
+  console.log(product)
   const { id, colors, stock } = product;
-  const [color, setColor] = useState(colors[0]);
+  const [check, setCheck] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
   const setDecrease = () => {
     amount > 1 ? setAmount(amount - 1) : setAmount(1);
@@ -26,16 +28,13 @@ const AddToCart = ({ product }) => {
 
         {colors.map((currentColor, index) => {
           return (
-            <button
-              className={` bg-[${currentColor}] border border-[${currentColor}]  w-4 h-4 rounded-full
-               overflow-clip`}
-              key={index}
-              onClick={() => setColor(colors[index])}
-            >
-              {color === currentColor ? (
-                <FaCheck className=" text-blue-500 p-0.5" />
-              ) : null}
-            </button>
+            <ColorButton
+              currentColor={currentColor}
+              index={index}
+              colors={colors}
+              check={check}
+              setCheck={setCheck}
+            />
           );
         })}
       </div>

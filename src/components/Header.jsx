@@ -4,10 +4,11 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import logo from '../assets/logo.svg'
 import minilogo from '../assets/minilogo.svg'
+import SearchBar from "./product/SearchBar";
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between bg-slate-200  wrapper md:mb-14 mb-10">
+    <div className="flex items-center justify-between bg-slate-200  wrapper py-2">
       <NavLink to="/">
         {/* <span className=" rounded-tl-3xl bg-purple-950 px-4 py-1 font-bold md:text-2xl text-xl text-white  ">
           {" "}
@@ -17,10 +18,12 @@ const Header = () => {
           CART
         </span> */}
         <img src={logo} alt=""
-        className="hidden md:block h-20  lg:p-2 p-5" />
+        className="hidden md:block h-12 py-1 " />
         <img src={minilogo} alt=""
         className="block md:hidden h-16 p-2" />
       </NavLink>
+
+      <SearchBar/>
 
       <Navbar />
     </div>

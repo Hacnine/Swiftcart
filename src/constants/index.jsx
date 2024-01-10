@@ -7,12 +7,14 @@ export const newsForm = [
   
   ]
 
+ export  const colors = ["#22D3EF","#ff0000","#CDD0D0","#000000"]
+
   export const category = [
     {title: "All", link:""},
+    {title: "Watch", link:""},
     {title: "Mobile", link:""},
     {title: "Laptop", link:""},
     {title: "Accessories", link:""},
-    {title: "Watch", link:""},
 
   ]
 

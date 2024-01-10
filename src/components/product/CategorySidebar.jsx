@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useFilterContext } from "../../context/filterContext";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const CategorySidebar = ({ title }) => {
   const { sortByCategory } = useFilterContext();
@@ -27,16 +27,20 @@ const CategorySidebar = ({ title }) => {
 
   return (
     <div>
-          <Link
-            to={`?title=${title}`}
-            className={`bg-gray-100 px-4 py-1 rounded-full border-2`}
-            onClick={() => {
-              handleLinkClick(title);
-              handleCategoryClick();
-            }}
-          >
-            {title}
-          </Link>
+      <Link
+        to={`?title=${title}`}
+        className={`bg-gray-100 px-4 py-1 rounded-full 
+      hover:text-gray-800 hover:bg-purple-300
+      border-2 border-transparent hover:border-purple-300
+      active:ring-2
+      active:border-purple-500 active:ring-purple-800 capitalize
+    `}
+        onClick={() => {
+          handleLinkClick();
+        }}
+      >
+        {title}
+      </Link>
     </div>
   );
 };

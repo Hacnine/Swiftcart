@@ -68,31 +68,7 @@ const filterReducer = (state, action) => {
         return currentElement.category === "mobile";
       });
 
-      // const targetBlackColor = "#000000";
-
-      // // Filter products with the specified color
-      // const blackProducts = action.payload.filter((product) => {
-      //   return product.colors.includes(targetBlackColor);
-      // });
-
-      // const targetBlueColor = "#22D3EF";
-
-      // const blueProducts = action.payload.filter((product) => {
-      //   return product.colors.includes(targetBlueColor);
-      // });
-
-      // const targetRedColor = "#ff0000";
-
-      // const redProducts = action.payload.filter((product) => {
-      //   return product.colors.includes(targetRedColor);
-      // });
-
-      // const targetGreyColor = "#CDD0D0";
-
-      // const greyProducts = action.payload.filter((product) => {
-      //   return product.colors.includes(targetGreyColor);
-      // });
-
+     
       return {
         ...state,
         filterProducts: mobileData,
@@ -122,42 +98,55 @@ const filterReducer = (state, action) => {
       const watchData = action.payload.filter((currentElement) => {
         return currentElement.category === "watch";
       });
+
+      
+
       return {
         ...state,
         filterProducts: watchData,
       };
 
-      case "sSorting":
-        let newSortData;
-        // let tempSortProduct = [...action.payload];
-  
-        const { filterProducts, sortingValue } = state;
-        let tempSortProduct = [...filterProducts];
-  
-        const sortingProducts = (a, b) => {
-          if (sortingValue === "lowest") {
-            return a.price - b.price;
-          }
-  
-          if (sortingValue === "highest") {
-            return b.price - a.price;
-          }
-  
-          if (sortingValue === "a-z") {
-            return a.name.localeCompare(b.name);
-          }
-  
-          if (sortingValue === "z-a") {
-            return b.name.localeCompare(a.name);
-          }
-        };
-  
-        newSortData = tempSortProduct.sort(sortingProducts);
-  
+      case "SET_COMPUTER_DATA":
+        const computerData = action.payload.filter((currentElement) => {
+          return currentElement.category === "computer";
+        });
+
         return {
           ...state,
-          filter_products: newSortData,
+          filterProducts: computerData,
         };
+
+      // case "sSorting":
+      //   let newSortData;
+      //   // let tempSortProduct = [...action.payload];
+  
+      //   const { filterProducts, sortingValue } = state;
+      //   let tempSortProduct = [...filterProducts];
+  
+      //   const sortingProducts = (a, b) => {
+      //     if (sortingValue === "lowest") {
+      //       return a.price - b.price;
+      //     }
+  
+      //     if (sortingValue === "highest") {
+      //       return b.price - a.price;
+      //     }
+  
+      //     if (sortingValue === "a-z") {
+      //       return a.name.localeCompare(b.name);
+      //     }
+  
+      //     if (sortingValue === "z-a") {
+      //       return b.name.localeCompare(a.name);
+      //     }
+      //   };
+  
+      //   newSortData = tempSortProduct.sort(sortingProducts);
+  
+      //   return {
+      //     ...state,
+      //     filter_products: newSortData,
+      //   };
 
         case "FILTER_PRODUCTS":
           let {allProducts} = state;
@@ -175,6 +164,52 @@ const filterReducer = (state, action) => {
             ...state,
             filterProducts:tempFilterProducts,
           }
+
+          case "GET_COLORED_FILTERS":
+
+          const { currentColor, filterProducts } = action.payload;
+          console.log(currentColor)
+            const getColor = (targetColor)=>{
+              const products = filterProducts.filter((product) => {
+                return product.colors.includes(targetColor);
+              });
+              return products;
+            }
+
+            const getProducts = getColor(currentColor);
+            console.log(getProducts);
+
+           const targetBlackColor = "#000000";
+
+      // Filter products with the specified color
+      // const blackProducts = action.payload.filter((product) => {
+      //   return product.colors.includes(targetBlackColor);
+      // });
+
+      // const targetBlueColor = "#22D3EF";
+
+      // const blueProducts = action.payload.filter((product) => {
+      //   return product.colors.includes(targetBlueColor);
+      // });
+
+      // const targetRedColor = "#ff0000";
+
+      // const redProducts = action.payload.filter((product) => {
+      //   return product.colors.includes(targetRedColor);
+      // });
+
+      // const targetGreyColor = "#CDD0D0";
+
+      // const greyProducts = action.payload.filter((product) => {
+      //   return product.colors.includes(targetGreyColor);
+      // });
+
+
+      return {
+        ...state,
+        filterProducts:getProducts,
+      }
+
    
   }
   return state;
