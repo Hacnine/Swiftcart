@@ -14,20 +14,7 @@ import SignIn from "./pages/SignIn";
 import Footer from "./components/Footer";
 
 const Links = () => {
-  const theme = {
-    colors: {
-      bg: "#F6F8FA",
-      text:"rgba(29,29,29, .8)",
-      white:"#fff",
-      black:"#212529",
-      helper:"#8490ff",
-      footer_bg:"#8490ff"
-    },
-    media:{
-      tab:"998px",
-      mobile:"768px",
-    }
-  }
+
   return (
       <BrowserRouter>
         <Header/>

@@ -30,7 +30,6 @@ const Product = () => {
     <>
       <div className="wrapper flex items-start justify-between mt-14">
         
-       <p className=" lg:block md:hidden"> Bismillah</p>
         <div className="w-[22%] gap-4 center shadow-">
           <Sidebar />
           <BiSolidChevronRightCircle className="text-purple-950 h-7 w-7 cursor-pointer" />

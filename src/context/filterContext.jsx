@@ -25,35 +25,34 @@ const FilterContextProvider = ({ children }) => {
   }, [state.filter]);
 
   const sortingData = (data) => {
-    switch (data.name) {
-      case "Price-High to Low":
-        console.log("data", data.name);
-        dispatch({
-          type: "GET_HIGH_TO_LOW_PRICE",
-          payload: state.filterProducts,
-        });
+    // switch (data) {
+    //   case "Price-High to Low":
+    //     dispatch({
+    //       type: "GET_HIGH_TO_LOW_PRICE",
+    //       payload: state.filterProducts,
+    //     });
 
-        break;
-      case "Price-Low to High":
-        console.log("data", data.name);
-        dispatch({
-          type: "GET_LOW_TO_HIGH_PRICE",
-          payload: state.filterProducts,
-        });
-        break;
+    //     break;
+    //   case "Price-Low to High":
+    //     console.log("data", data);
+    //     dispatch({
+    //       type: "GET_LOW_TO_HIGH_PRICE",
+    //       payload: state.filterProducts,
+    //     });
+    //     break;
 
-      case "Name(A-Z)":
-        console.log("data", data.name);
-        dispatch({ type: "GET_Price(A-Z)", payload: state.filterProducts });
-        break;
-      case "Name(Z-A)":
-        console.log("data", data.name);
-        dispatch({ type: "GET_Price(Z-A)", payload: state.filterProducts });
-        break;
-      default:
-      // code block
-    }
-    dispatch({ type: "GET_SORT_VALUE", payload: data });
+    //   case "Name(A-Z)":
+    //     dispatch({ type: "GET_Price(A-Z)", payload: state.filterProducts });
+    //     break;
+    //   case "Name(Z-A)":
+    //     console.log("data", data.name);
+    //     dispatch({ type: "GET_Price(Z-A)", payload: state.filterProducts });
+    //     break;
+    //   default:
+    //   // code block
+    // }
+    dispatch({ type: "GET_SORT_VALUE", payload:data });
+    console.log(data)
   };
 
   // const setDispatch = (type, payload) =>{
@@ -111,7 +110,7 @@ const FilterContextProvider = ({ children }) => {
     if (currentColor) {
       dispatch({
         type: "GET_COLORED_FILTERS",
-        payload: { currentColor, filterProducts: state.filterProducts }
+        payload: { currentColor, allProduct: state.filterProducts }
       });
     }
   };

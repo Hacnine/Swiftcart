@@ -4,6 +4,7 @@ import CategorySidebar from "./CategorySidebar";
 import SearchBar from "./SearchBar.jsx";
 import ColorFilter from "./ColorFilter.jsx";
 import { useFilterContext } from "../../context/filterContext.jsx";
+import BrandFIlter from "./BrandFIlter.jsx";
 
 const Sidebar = () => {
   const { allProducts, getUniqueData } = useFilterContext();
@@ -11,7 +12,7 @@ const Sidebar = () => {
   const categoryOnlyData = getUniqueData(allProducts, "category");
 
   return (
-    <div>
+    <div className=" space-y-4">
       <div className=" ">
         <h1 className=" text-lg font-bold mb-5 text-gray-800">Category</h1>
         {categoryOnlyData.map((item) => (
@@ -21,6 +22,7 @@ const Sidebar = () => {
         ))}
       </div>
       <ColorFilter />
+      <BrandFIlter/>
     </div>
   );
 };

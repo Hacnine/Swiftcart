@@ -17,7 +17,7 @@ const NavLinks = ({className}) => {
         </li>
         <li>
           <NavLink to="/signin" className=" rounded-md text-white">
-            <PurpleBtn children={"Sign In"} />
+            <PurpleBtn children={"Sign In"} className={'lg:block hidden text-xs'} />
           </NavLink>
         </li>
         <li className=" relative">
