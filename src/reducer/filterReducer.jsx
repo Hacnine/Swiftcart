@@ -7,6 +7,7 @@ const filterReducer = (state, action) => {
         ...state,
         allProducts: [...action.payload],
         filterProducts: [...action.payload],
+
       };
 
     case "SET_GRID_VIEW":
@@ -38,7 +39,6 @@ const filterReducer = (state, action) => {
             const sortedProductsHighToLow = state.filterProducts
               .slice()
               .sort((a, b) => b.price - a.price);
-            console.log(sortedProductsHighToLow);
             return {
               ...state,
               filterProducts: sortedProductsHighToLow,
@@ -48,7 +48,6 @@ const filterReducer = (state, action) => {
             const sortedProductsLowToHigh = state.filterProducts
               .slice()
               .sort((a, b) => a.price - b.price);
-            console.log(sortedProductsLowToHigh);
             return {
               ...state,
               filterProducts: sortedProductsLowToHigh,
@@ -93,52 +92,7 @@ const filterReducer = (state, action) => {
         filterProducts: sortedProducts,
       };
 
-    case "GET_HIGH_TO_LOW_PRICE":
-      const sortedProductsHighToLow = action.payload
-        .slice()
-        .sort((a, b) => b.price - a.price);
-      console.log(sortedProductsHighToLow);
-      return {
-        ...state,
-        filterProducts: sortedProductsHighToLow,
-      };
-
-    case "GET_LOW_TO_HIGH_PRICE":
-      const sortedProductsLowToHigh = action.payload
-        .slice()
-        .sort((a, b) => a.price - b.price);
-      console.log(sortedProductsLowToHigh);
-      return {
-        ...state,
-        filterProducts: sortedProductsLowToHigh,
-      };
-
-    case "GET_Price(A-Z)":
-      const accedingOrder = action.payload
-        .slice()
-        .sort((a, b) => a.name.localeCompare(b.name));
-
-      return {
-        ...state,
-        filterProducts: accedingOrder,
-      };
-
-    case "GET_Price(Z-A)":
-      const descendingOrder = action.payload
-        .slice()
-        .sort((a, b) => b.name.localeCompare(a.name));
-
-      return {
-        ...state,
-        filterProducts: descendingOrder,
-      };
-
-    case "ALL":
-      return {
-        ...state,
-        filterProducts: action.payload,
-      };
-
+   
     case "UPDATE_FILTERS_VALUE":
       const { name, value } = action.payload;
 
@@ -199,38 +153,6 @@ const filterReducer = (state, action) => {
         filterProducts: computerData,
       };
 
-    // case "sSorting":
-    //   let newSortData;
-    //   // let tempSortProduct = [...action.payload];
-
-    //   const { filterProducts, sortingValue } = state;
-    //   let tempSortProduct = [...filterProducts];
-
-    //   const sortingProducts = (a, b) => {
-    //     if (sortingValue === "lowest") {
-    //       return a.price - b.price;
-    //     }
-
-    //     if (sortingValue === "highest") {
-    //       return b.price - a.price;
-    //     }
-
-    //     if (sortingValue === "a-z") {
-    //       return a.name.localeCompare(b.name);
-    //     }
-
-    //     if (sortingValue === "z-a") {
-    //       return b.name.localeCompare(a.name);
-    //     }
-    //   };
-
-    //   newSortData = tempSortProduct.sort(sortingProducts);
-
-    //   return {
-    //     ...state,
-    //     filter_products: newSortData,
-    //   };
-
     case "FILTER_PRODUCTS":
       let { allProducts } = state;
       let tempFilterProducts = [...allProducts];
@@ -250,7 +172,6 @@ const filterReducer = (state, action) => {
 
     case "GET_COLORED_FILTERS":
       const { currentColor, allProduct } = action.payload;
-      console.log(currentColor);
       const tempColorFilter = [...allProduct];
 
       const getColor = (targetColor) => {
@@ -261,37 +182,27 @@ const filterReducer = (state, action) => {
       };
 
       const getProducts = getColor(currentColor);
-      console.log(getProducts);
-
-      const targetBlackColor = "#000000";
-
-      // Filter products with the specified color
-      // const blackProducts = action.payload.filter((product) => {
-      //   return product.colors.includes(targetBlackColor);
-      // });
-
-      // const targetBlueColor = "#22D3EF";
-
-      // const blueProducts = action.payload.filter((product) => {
-      //   return product.colors.includes(targetBlueColor);
-      // });
-
-      // const targetRedColor = "#ff0000";
-
-      // const redProducts = action.payload.filter((product) => {
-      //   return product.colors.includes(targetRedColor);
-      // });
-
-      // const targetGreyColor = "#CDD0D0";
-
-      // const greyProducts = action.payload.filter((product) => {
-      //   return product.colors.includes(targetGreyColor);
-      // });
 
       return {
         ...state,
         filterProducts: getProducts,
       };
+
+    case "GET_PRICE_FILTERS":
+      let price = action.payload;
+      const minPrice = price[0]*100;
+      const maxPrice = price[1]*100;
+console.log(price)
+      // Filter products based on the price range
+      const productsInPriceRange = state.allProducts.filter(
+        (product) => product.price >= minPrice && product.price <= maxPrice
+      );
+
+      return {
+        ...state,
+        filterProducts:productsInPriceRange,
+      };
+
   }
   return state;
 };

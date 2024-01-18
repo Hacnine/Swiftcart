@@ -10,9 +10,6 @@ const Product = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const selectedData = searchParams.get("title");
-  // console.log(selectedData)
-  let secondaryData = selectedData;
-  const prevSelectedDataRef = useRef();
 
   useEffect(
     () => {

@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Error from "./pages/Error";
 import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
-import { GlobalStyle } from "./GlobalStyle";
+// import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import SignIn from "./pages/SignIn";

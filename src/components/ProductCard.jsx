@@ -22,7 +22,7 @@ const ProductCard = (product) => {
             <p className=" font-semibold sm:text-sm text-xs text-red-600">
               {" "}
               <span className="  text-xl font-bold ">৳</span>
-              {Math.trunc(price / 100)}
+              {Math.round(price / 100)}
             </p>
           </div>
         </div>

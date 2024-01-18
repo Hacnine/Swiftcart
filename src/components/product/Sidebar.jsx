@@ -5,6 +5,7 @@ import SearchBar from "./SearchBar.jsx";
 import ColorFilter from "./ColorFilter.jsx";
 import { useFilterContext } from "../../context/filterContext.jsx";
 import BrandFIlter from "./BrandFIlter.jsx";
+import PriceSlider from "./PriceSlider.jsx";
 
 const Sidebar = () => {
   const { allProducts, getUniqueData } = useFilterContext();
@@ -23,6 +24,7 @@ const Sidebar = () => {
       </div>
       <ColorFilter />
       <BrandFIlter/>
+      <PriceSlider/>
     </div>
   );
 };

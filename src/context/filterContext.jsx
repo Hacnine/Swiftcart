@@ -6,7 +6,6 @@ const FilterContext = createContext();
 const initialState = {
   allProducts: [],
   filterProducts: [],
-  gridView: true,
   sortedValue: "lowest",
   filter: {
     text: "",
@@ -25,34 +24,9 @@ const FilterContextProvider = ({ children }) => {
   }, [state.filter]);
 
   const sortingData = (data) => {
-    // switch (data) {
-    //   case "Price-High to Low":
-    //     dispatch({
-    //       type: "GET_HIGH_TO_LOW_PRICE",
-    //       payload: state.filterProducts,
-    //     });
 
-    //     break;
-    //   case "Price-Low to High":
-    //     console.log("data", data);
-    //     dispatch({
-    //       type: "GET_LOW_TO_HIGH_PRICE",
-    //       payload: state.filterProducts,
-    //     });
-    //     break;
-
-    //   case "Name(A-Z)":
-    //     dispatch({ type: "GET_Price(A-Z)", payload: state.filterProducts });
-    //     break;
-    //   case "Name(Z-A)":
-    //     console.log("data", data.name);
-    //     dispatch({ type: "GET_Price(Z-A)", payload: state.filterProducts });
-    //     break;
-    //   default:
-    //   // code block
-    // }
     dispatch({ type: "GET_SORT_VALUE", payload:data });
-    console.log(data)
+    
   };
 
   // const setDispatch = (type, payload) =>{
@@ -115,6 +89,16 @@ const FilterContextProvider = ({ children }) => {
     }
   };
 
+  const getMaxMinPrice = (price) =>{
+    if (price) {
+      dispatch({
+        type: "GET_PRICE_FILTERS",
+        payload:  price 
+      });
+    }
+
+  }
+
   useEffect(() => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
   }, [products]);
@@ -129,6 +113,7 @@ const FilterContextProvider = ({ children }) => {
         updateFilterValue,
         getUniqueData,
         getColor,
+        getMaxMinPrice
       }}
     >
       {children}
