@@ -172,7 +172,7 @@ const filterReducer = (state, action) => {
 
     case "GET_COLORED_FILTERS":
       const { currentColor, allProduct } = action.payload;
-      const tempColorFilter = [...allProduct];
+      const tempColorFilter = state.allProducts;
 
       const getColor = (targetColor) => {
         const products = tempColorFilter.filter((product) => {
@@ -192,7 +192,6 @@ const filterReducer = (state, action) => {
       let price = action.payload;
       const minPrice = price[0]*100;
       const maxPrice = price[1]*100;
-console.log(price)
       // Filter products based on the price range
       const productsInPriceRange = state.allProducts.filter(
         (product) => product.price >= minPrice && product.price <= maxPrice

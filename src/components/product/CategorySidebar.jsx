@@ -3,7 +3,7 @@ import { useFilterContext } from "../../context/filterContext";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const CategorySidebar = ({ title }) => {
-  const { sortByCategory } = useFilterContext();
+  // const { sortByCategory } = useFilterContext();
 
   const location = useLocation();
   const history = useNavigate();

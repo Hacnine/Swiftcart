@@ -26,8 +26,6 @@ const PriceSlider = () => {
     getMaxMinPrice(value);
   }, [value]);
 
-  console.log(filterProducts);
-
   return (
     <div>
       <h1 className="text-lg font-bold mb-5 text-gray-800">Prices</h1>

@@ -29,16 +29,16 @@ export const customMUI ={
 export const Customization = {
   inputField: {
     "& .MuiInput-underline:before": {
-      borderBottomColor: "orange",
+      borderBottomColor: "Indigo",
     },
     "& .MuiInput-underline:after": {
-      borderBottomColor: "orangered",
+      borderBottomColor: "Indigo",
     },
     // "& .MuiInput-text:before": {
     //   color: "orangered",
     // },
 
-    "& .MuiInput-underline:hover:before": { borderBottomColor: "orange" },
+    "& .MuiInput-underline:hover:before": { borderBottomColor: "Indigo" },
 
     "& .MuiInputLabel-root": { color: "gray" },
     
