@@ -14,7 +14,6 @@ const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
   const { id } = useParams();
-  console.log(id);
 
   const {
     id: alias,
@@ -29,12 +28,10 @@ const SingleProduct = () => {
     reviews,
     image,
   } = singleProduct;
-  console.log(colors)
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
   }, []);
-  console.log(singleProduct);
   if (isSingleLoading) {
     return <div>Loading</div>;
   }

@@ -23,7 +23,6 @@ const SingleProductDetails = ({
   colors,
   singleProduct,
 }) => {
-  console.log(singleProduct);
   return (
     <div>
       <div className="flex items-start justify-start flex-col gap-4 w-full">
@@ -86,17 +85,6 @@ const SingleProductDetails = ({
               </span>
             </div>
           </div>
-
-          
-      {/* <div className="flex items-center justify-start  mb-3 font-bold text-gray-600">
-        <button>-</button>
-        <input
-          type="text"
-          className=" border-transparent w-10  focus:border-transparent focus:ring-0 "
-          value={"1"}
-        />
-        <button>+</button>
-      </div> */}
 
           
         </div>

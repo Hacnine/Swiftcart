@@ -12,6 +12,8 @@ import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import SignIn from "./pages/SignIn";
 import Footer from "./components/Footer";
+import SignUpPage from "./pages/SignUp";
+import SignInPage from "./pages/SignIn";
 
 const Links = () => {
 
@@ -25,7 +27,9 @@ const Links = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+
           <Route path="*" element={<Error />} />
         </Routes>
         <Footer/>

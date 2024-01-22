@@ -15,9 +15,6 @@ const FilterContextProvider = ({ children }) => {
   const { products } = useProductContext();
   const [state, dispatch] = useReducer(filterReducer, initialState);
 
-  const setGridView = () => {
-    dispatch({ type: "SET_GRID_VIEW" });
-  };
 
   useEffect(() => {
     dispatch({ type: "FILTER_PRODUCTS" });
@@ -107,7 +104,6 @@ const FilterContextProvider = ({ children }) => {
     <FilterContext.Provider
       value={{
         ...state,
-        setGridView,
         sortingData,
         sortByCategory,
         updateFilterValue,

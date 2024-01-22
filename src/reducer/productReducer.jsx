@@ -89,6 +89,22 @@ const ProductReducer = (state, action) => {
         isSingleLoading: false,
         isError: true,
       };
+
+    case "SET_QUANTITY":
+      let { quantity, condition,stock } = action.payload;
+      console.log(action.payload)
+        if(condition === 'increase'){
+          if(quantity<stock)
+          quantity =  quantity += 1;
+        }
+       else {
+        if(quantity>1)
+            {quantity -= 1;}
+      }
+      return {
+        ...state,
+        quantity: quantity,
+      };
   }
   return state;
 };

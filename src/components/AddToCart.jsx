@@ -3,21 +3,19 @@ import ColorInputs from "./ColorInputs";
 import CartAmountToggle from "./CartAmountToggle";
 import PurpleBtn from "./PurpleBtn";
 import ColorButton from "./ColorButton";
-
 import { NavLink } from "react-router-dom";
 
 const AddToCart = ({ product }) => {
-  console.log(product)
   const { id, colors, stock } = product;
   const [check, setCheck] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
-  const setDecrease = () => {
-    amount > 1 ? setAmount(amount - 1) : setAmount(1);
-  };
+  // const setDecrease = () => {
+  //   amount > 1 ? setAmount(amount - 1) : setAmount(1);
+  // };
 
-  const setIncrease = () => {
-    amount < stock ? setAmount(amount + 1) : setAmount(stock);
-  };
+  // const setIncrease = () => {
+  //   amount < stock ? setAmount(amount + 1) : setAmount(stock);
+  // };
 
   return (
     <div>
@@ -39,10 +37,14 @@ const AddToCart = ({ product }) => {
         })}
       </div>
       {/* <ColorInputs colors={colors} /> */}
-      <CartAmountToggle
+      {/* <CartAmountToggle
         amount={amount}
         setIncrease={setIncrease}
         setDecrease={setDecrease}
+      /> */}
+
+      <CartAmountToggle
+        stock={stock}
       />
 
       <NavLink to="/cart">

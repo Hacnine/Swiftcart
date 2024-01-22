@@ -13,16 +13,8 @@ const initialState = {
   featureProducts: [],
   isSingleLoading: false,
   singleProduct: [],
-  // mobile:[],
-  // laptop:[],
-  // accessories:[],
-  // watch:[],
-  // blackColor:[],
-  // whiteColor:[],
-  // redColors:[],
-  // blueColors:[],
-  // yellowColors:[],
-  // grayColors:[]
+  quantity:1,
+
 };
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -64,11 +56,15 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const getQuantity= (quantity, condition, stock)=>{
+    dispatch({ type: "SET_QUANTITY", payload:{quantity, condition, stock}});
+  }
+
   useEffect(() => {
     getProducts(API);
   }, []);
   return (
-    <AppContext.Provider value={{ ...state, getSingleProduct,getColorBaseProducts }}>
+    <AppContext.Provider value={{ ...state, getSingleProduct,getColorBaseProducts,getQuantity }}>
       {children}
     </AppContext.Provider>
   );

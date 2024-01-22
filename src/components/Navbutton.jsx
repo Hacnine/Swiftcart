@@ -6,7 +6,8 @@ import NavLinks from "./NavLinks";
 const Navbutton = () => {
   const [open, setOpen] = useState(false);
   return (
-    <main className="App">
+    <main >
+      {/* className="App" */}
       <MdMenu className=" text-2xl" onClick={() => setOpen(true)} />
 
       <NavbarPopup open={open} onClose={() => setOpen(false)}>

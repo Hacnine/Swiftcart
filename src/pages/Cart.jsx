@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { IconButton } from "@mui/material";
+import { FaMinus, FaPlus } from "react-icons/fa6";
+import CustomIconButton from "../components/cart/CustomIconButton";
+import CartCard from "../components/cart/CartCard";
 
 const Cart = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [count, setCount] = useState(0);
 
-export default Cart
+  
+  return (
+    <>
+    <CartCard/>
+    </>
+  );
+};
+
+export default Cart;
