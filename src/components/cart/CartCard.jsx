@@ -8,40 +8,37 @@ import {
   ListItemText,
 } from "@mui/material";
 import React from "react";
+import CartAmountToggle from "../CartAmountToggle";
 
-const CartCard = () => {
+const CartCard = ({ cartProduct: { name, image, amount, check, price } }) => {
+  // name,
+  // image,
+  // amount,
+  // check,
+  // price
+    console.log(name)
   return (
-    <div>
-      <table className="table-auto border-separate border-spacing-2 border border-slate-200 w-full ">
-        <thead>
-          <tr className="bg-gray-200">
-            <th className="px-4 py-2 border-2">Product Name</th>
-
-            <th className="td-qty px-4 py-2 border-2 text-center">Quantity</th>
-            <th className="px-4 py-2 border-2">Unit Price</th>
-            <th className="px-4 py-2 border-2">Sub Total</th>
-            <th className="px-4 py-2 border-2">Remove</th>
-          </tr>
-        </thead>
-        <tbody>
+  
+        <tbody className="">
           <tr className="border-b">
             <td className="  border-2 text-center">
-              <List sx={{ width: "100%", maxWidth: "100%" }}>
+              <List sx={{ width: "100%", maxWidth: "100%",  padding: 0, margin: 0 }}>
                 <ListItem>
                   <img
-                    src="https://via.placeholder.com/200x200/"
-                    alt="Image"
+                    src={image}
+                    alt={name}
                     style={{ width: 70, marginRight: 20 }}
                   />
                   <ListItemText
                     primary={
-                      <a href="#" className="text-blue-500 hover:underline">
-                        Adidas Men Red Printed T-shirt
+                      <a href="#" className="text-blue-500 hover:underline capitalize">
+                       {name}
                       </a>
                     }
                     secondary={
                       <div
-                        className={`w-4 h-4 bg-[#FF5733] rounded-full`}
+                        c className={`w-4 h-4 rounded-full`}
+                        style={{ backgroundColor: `${check}` }}
                       ></div>
                     }
                   />
@@ -49,19 +46,13 @@ const CartCard = () => {
               </List>
             </td>
 
-            <td className="px-4 py-2 border-2 text-center">
-              <div className="flex items-center">
-                <button className="p-1 border" type="button">
-                  -
-                </button>
-                <span className="px-2">2</span>
-                <button className="p-1 border" type="button">
-                  +
-                </button>
-              </div>
+            <td className="px-4 py-7 border-2 text-center flex items-center justify-center">
+
+              <CartAmountToggle/>
+              
             </td>
-            <td className="px-4 py-2 border-2 text-center">$ 20.63</td>
-            <td className="px-4 py-2 border-2 text-center">$ 41.26</td>
+            <td className="px-4 py-2 border-2 text-center">{Math.round(price / 100)}</td>
+            <td className="px-4 py-2 border-2 text-center">{Math.round((price*amount) / 100)}</td>
             <td className="px-4 py-2 border-2 text-center">
               <IconButton
                 sx={{ color: "red", "&:hover": { color: "OrangeRed" } }}
@@ -70,21 +61,9 @@ const CartCard = () => {
               </IconButton>
             </td>
           </tr>
-          <tr>
-            <td
-              className="border-t border-2 text-center"
-              colspan="6"
-              align="right"
-            >
-              Total
-            </td>
-            <td className="border-t border-2 text-center" colspan="2">
-              <b className="block px-4 py-2">$ 163.47</b>
-            </td>
-          </tr>
+         
         </tbody>
-      </table>
-    </div>
+
   );
 };
 

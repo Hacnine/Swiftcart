@@ -32,10 +32,10 @@ const SingleProductDetails = ({
           <p className="text-sm text-gray-400 ">({reviews} Customer reviews)</p>
         </div>
         <del className=" font-semibold text-sm">
-          ৳ {Math.trunc(price / 100)}
+          ৳ {Math.round(price / 100)}
         </del>
         <p className=" font-semibold text-sm">
-          Deal Of The Day ৳ {Math.trunc(price / 100 - 500)}
+          Deal Of The Day ৳ {Math.round(price / 100 - 500)}
         </p>
 
         <p className=" font-bold text-gray-600">Description</p>

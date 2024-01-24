@@ -13,7 +13,6 @@ const initialState = {
   featureProducts: [],
   isSingleLoading: false,
   singleProduct: [],
-  quantity:1,
 
 };
 const AppProvider = ({ children }) => {
@@ -56,15 +55,13 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  const getQuantity= (quantity, condition, stock)=>{
-    dispatch({ type: "SET_QUANTITY", payload:{quantity, condition, stock}});
-  }
+
 
   useEffect(() => {
     getProducts(API);
   }, []);
   return (
-    <AppContext.Provider value={{ ...state, getSingleProduct,getColorBaseProducts,getQuantity }}>
+    <AppContext.Provider value={{ ...state, getSingleProduct,getColorBaseProducts, }}>
       {children}
     </AppContext.Provider>
   );

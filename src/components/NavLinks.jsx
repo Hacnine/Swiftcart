@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
 import PurpleBtn from "./PurpleBtn"
-import { useProductContext } from "../context/ProductContext";
+import { useCartContext } from "../context/cartContext";
+
 const NavLinks = ({className}) => {
-  let {quantity} = useProductContext();
+  let {quantity} = useCartContext();
 
   return (
     <div className="  center">
