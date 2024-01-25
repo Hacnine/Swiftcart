@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputForm = ({ id, type, label, placeholder, onChange, className, visibleLable}) => {
+const InputForm = ({ id, type, label, placeholder, onChange, className, visibleLabel, hidePlaceHolder}) => {
  
     let contentToRender;
   
@@ -20,7 +20,7 @@ const InputForm = ({ id, type, label, placeholder, onChange, className, visibleL
       id={id}
       name={label}
       type={type}
-      placeholder={label}
+      placeholder={`${hidePlaceHolder?  '': {label}}`}
       onChange={onChange}
       className={`${className} px-2 w-full h-10 normal-case rounded-md focus:ring-green-100 input placeholder:font-bold `}
       autoComplete='off'
@@ -30,11 +30,11 @@ const InputForm = ({ id, type, label, placeholder, onChange, className, visibleL
   
     return (
       <div className=" py-2">
-        {visibleLable? 
+        {visibleLabel? 
         
         <label
           htmlFor={id}
-          className=" text-blue-gray-900 text-sm font-medium text leading-9 font-open"
+          className=" text-gray-600 text-xs font-medium text leading-9 font-open uppercase"
         >
           {label}
         </label>

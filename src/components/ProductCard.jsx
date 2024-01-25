@@ -12,7 +12,7 @@ const ProductCard = (product) => {
   const {addCartItem} = useCartContext();
   let {quantity} = useProductContext();
   const handleClick = ()=>(
-    addCartItem( name, image, price,),
+    addCartItem( id, name, image, amount, check, price,stock),
     console.log(image)
   )
   return (

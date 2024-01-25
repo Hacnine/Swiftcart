@@ -33,6 +33,54 @@ const cartReducer = (state, action) => {
         ...state,
         cartProducts: [...state.cartProducts, action.payload],
       };
+
+    case "DELETE_ITEM":
+      const updatedCart = state.cartProducts.filter(
+        (item) => item.id !== action.payload
+      );
+      return {
+        ...state,
+        cartProducts: updatedCart,
+      };
+
+    case "DELETE_ALL_ITEMS":
+      return {
+        ...state,
+        cartProducts: [],
+      };
+
+    case "UPDATE_QUANTITY":
+      const { productId, amount } = action.payload;
+
+      const updatedCartProducts = state.cartProducts.map((product) => {
+        if (product.id === productId) {
+          return { ...product, amount: amount };
+        }
+        return product;
+      });
+      console.log(updatedCartProducts);
+
+      return {
+        ...state,
+        cartProducts: updatedCartProducts,
+      };
+
+    case "CALCULATE_TOTAL_PRICE":
+      const total = state.cartProducts.reduce((acc, product) => {
+        return acc + product.price * product.amount;
+      }, 0);
+
+      let tempTotalItem = 0;
+      const totalItem = state.cartProducts.reduce((acc, product) => {
+        return acc + tempTotalItem + product.amount;
+      }, 0);
+
+
+      return {
+        ...state,
+        total,
+        totalItem: totalItem
+      };
   }
 };
 export default cartReducer;

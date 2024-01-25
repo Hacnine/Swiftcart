@@ -14,6 +14,9 @@ import SignIn from "./pages/SignIn";
 import Footer from "./components/Footer";
 import SignUpPage from "./pages/SignUp";
 import SignInPage from "./pages/SignIn";
+import Checkout from "./pages/Checkout";
+import PaymentMethod from "./pages/PaymentMethod";
+
 
 const Links = () => {
 
@@ -27,6 +30,8 @@ const Links = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout/>}/>
+          <Route path="/payment" element={<PaymentMethod/>}/>
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
 

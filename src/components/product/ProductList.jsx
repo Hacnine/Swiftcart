@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useProductContext } from '../../context/ProductContext';
 import { useFilterContext } from '../../context/filterContext';
 import ProductCard from '../ProductCard';
-
 import Sort from './Sort';
 
 const ProductList = () => {

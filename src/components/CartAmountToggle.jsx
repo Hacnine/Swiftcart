@@ -4,13 +4,17 @@ import { useProductContext } from '../context/ProductContext';
 
 const CartAmountToggle = ({amount, setIncrease, setDecrease,stock}) => {
 // console.log(amount)
-  const {getQuantity,quantity} = useCartContext();
+  const {getQuantity,quantity,addCartItem} = useCartContext();
   const increaseQuantity = (quantity,condition)=>(
     getQuantity(quantity,condition)
   )
 
   const sendQuantity = (quantity,condition)=>(
     getQuantity(quantity,condition, stock)
+  )
+
+  const sentCartItem = ()=>(
+    addCartItem(id,name,image[0].url,amount,check , price ,)
   )
   return (
     <>

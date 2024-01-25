@@ -1,32 +1,26 @@
 import React, { useEffect, useState } from "react";
-import ColorInputs from "./ColorInputs";
+import ColorButton from "./ColorButton";
 import CartAmountToggle from "./CartAmountToggle";
 import PurpleBtn from "./PurpleBtn";
-import ColorButton from "./ColorButton";
-import { NavLink } from "react-router-dom";
 import { useCartContext } from "../context/cartContext";
 
 const AddToCart = ({ product }) => {
-  const {getColor, addCartItem} = useCartContext();
-  const { company,
+  const { getColor, addCartItem, cartProducts } = useCartContext();
+  const {
+    id,
     name,
     colors,
     price,
-    description,
-    category,
     stock,
-    stars,
-    reviews,
-    image } = product;
+    image
+  } = product;
   const [check, setCheck] = useState(colors[0]);
-
-
-useEffect(() => {
-  // Your code here
-  getColor(check);
-}, [check]);
-
   const [amount, setAmount] = useState(1);
+
+  useEffect(() => {
+    getColor(check);
+  }, [check]);
+
   const setDecrease = () => {
     amount > 1 ? setAmount(amount - 1) : setAmount(1);
   };
@@ -35,9 +29,18 @@ useEffect(() => {
     amount < stock ? setAmount(amount + 1) : setAmount(stock);
   };
 
-  const sentCartItem = ()=>(
-    addCartItem(name,image[0].url,amount,check , price )
-  )
+  const sentCartItem = () => {
+    // Check if the product is already in the cart
+    const existingProduct = cartProducts.find((item) => item.id === id);
+
+    if (existingProduct) {
+      // If product is already in the cart, update the quantity
+      // addCartItem(id, name, image[0].url, existingProduct.amount + amount, check, price, stock);
+    } else {
+      // If product is not in the cart, add it
+      addCartItem(id, name, image[0].url, amount, check, price, stock);
+    }
+  };
 
   return (
     <div>

@@ -8,6 +8,8 @@ const initialState = {
   cartProducts: [],
   quantity: 1,
   color: "",
+  total:0,
+  totalItem:0
 };
 const CartContextProvider = ({ children }) => {
   const { products } = useProductContext();
@@ -21,23 +23,46 @@ const CartContextProvider = ({ children }) => {
     dispatch({ type: "SET_COLOR", payload: color });
   };
 
-  const addCartItem = (name, image, amount, check, price) => {
-    console.log(name);
-  
-    // Dispatch an action to update the state based on your requirements
+  const addCartItem = (id, name, image, amount, check, price, stock) => {
     dispatch({
       type: "ADD_TO_CART",
       payload: {
+        id,
         name,
         image,
         amount,
         check,
         price,
+        stock,
       },
     });
   };
 
-  
+  const updateCartItemQuantity = (productId, amount) => {
+    dispatch({
+      type: "UPDATE_QUANTITY",
+      payload: { productId, amount },
+    });
+  };
+
+  const calculateTotalPrice = () => {
+    dispatch({
+      type: "CALCULATE_TOTAL_PRICE",
+    });
+  };
+
+  const deleteCartItem = (productId) => {
+    dispatch({
+      type: "DELETE_ITEM",
+      payload: productId,
+    });
+  };
+
+  const deleteAllCartItem = () => {
+    dispatch({
+      type: "DELETE_ALL_ITEMS",
+    });
+  };
 
   return (
     <CartContext.Provider
@@ -46,6 +71,10 @@ const CartContextProvider = ({ children }) => {
         getColor,
         getQuantity,
         addCartItem,
+        updateCartItemQuantity,
+        calculateTotalPrice,
+        deleteCartItem,
+        deleteAllCartItem,
       }}
     >
       {children}
