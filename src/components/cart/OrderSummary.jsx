@@ -6,7 +6,13 @@ import OrderSummaryItems from "./OrderSummaryItems";
 import PurpleBtn from "../PurpleBtn";
 
 const OrderSummary = ({ setActive, btnName, linkName }) => {
-  const { total, totalItem } = useCartContext();
+  const { total, totalItem, deleteAllCartItem } = useCartContext();
+
+  const handleClick = () => {
+    if (btnName === "CONFIRM ORDER") {
+      deleteAllCartItem();
+    }
+  };
   return (
     <div className="rounded-lg  text-xs text-white font-semibold tracking-wide  md:w-[30%]  w-full  bg-white shadow-lg shadow-gray-400 py-6 px-6 ">
       <p className="text-start text-xl text-slate-800 font-bold">Cart Totals</p>
@@ -22,7 +28,7 @@ const OrderSummary = ({ setActive, btnName, linkName }) => {
         amount={Math.round(total / 100) + 100}
       />
 
-      <div className="center">
+      <div className="center" onClick={handleClick}>
         <Link
           onClick={() => setActive(2)}
           to={`/${linkName}`}

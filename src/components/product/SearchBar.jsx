@@ -4,10 +4,10 @@ import { useFilterContext } from '../../context/filterContext'
 const SearchBar = () => {
   const {filter:{text},updateFilterValue} = useFilterContext();
   return (
-    <div className=" relative md:w-[40%] px-3">
+    <div className=" relative md:w-[40%] p-1 rounded-3xl bg-white">
     <form action="" onSubmit={(e) => e.preventDefault()} className=''>
-      <div className="flex items-center border border-gray-300 px-4  focus-within:border-blue-500 focus-within:ring focus-within:ring-blue-200 rounded-2xl  w-">
-        <FiSearch className="text-gray-500 mr-2" />
+      <div className="flex items-center border border-gray-300 px-4  focus-within:border-blue-500 focus-within:ring focus-within:ring-blue-200 rounded-3xl ">
+        <FiSearch className="text-gray-500 mr-2 " />
         <input
           type="text"
           name="text"

@@ -5,7 +5,7 @@ import PaymentMethodCard from '../components/paymentmethodcard/PaymentMethodCard
 import rocket from '../assets/rocket.png'
 import bkash from '../assets/bkash.png'
 import nagad from '../assets/nagad.png'
-import cashon from '../assets/cashon.jpg'
+import cashon from '../assets/cashon.png'
 
 
 const PaymentMethod = () => {

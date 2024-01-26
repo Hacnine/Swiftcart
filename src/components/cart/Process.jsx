@@ -50,7 +50,7 @@ const Process = ({ active, title }) => {
             ${active >= 3 ? "  bg-orange-500" : " bg-gray-500"}
             `}
           >
-            <Payment fontSize={`${active === 1 ? "large" : "small"}`} />
+            <Payment fontSize={`${active === 3 ? "large" : "small"}`} />
           </div>
         </div>
       </div>
