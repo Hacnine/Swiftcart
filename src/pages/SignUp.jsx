@@ -2,7 +2,7 @@ import {SignUp } from "../components/signinandup"
 
 const SignUpPage = () => {
   return (
-    <div>
+    <div className="mb-36">
       <SignUp/>
     </div>
   )

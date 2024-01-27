@@ -25,7 +25,7 @@ const Product = () => {
 
   return (
     <>
-      <div className="wrapper flex items-start justify-between mt-14">
+      <div className="wrapper flex items-start justify-between mt-14 mb-36">
         
         <div className="w-[22%] gap-4 center shadow-">
           <Sidebar />

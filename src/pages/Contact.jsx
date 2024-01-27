@@ -5,7 +5,7 @@ import { newsForm, message } from "../constants";
 const Contact = () => {
   return (
     <div>
-      <div className="mx-auto flex items-center justify-center flex-col gap-5">
+      <div className="mx-auto flex items-center justify-center flex-col gap-5 mb-36">
         <h1 className=" my-10 text-2xl text-purple-950 mx-auto">
           Contact Page
         </h1>

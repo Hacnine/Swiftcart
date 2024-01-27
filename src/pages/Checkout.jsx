@@ -6,7 +6,7 @@ import OrderSummary from "../components/cart/OrderSummary";
 const Checkout = () => {
   const [active, setActive] = useState(2);
   return (
-    <div className=" h-[800px]">
+    <div className=" h-[800px] mb-36">
       <div className="relative">
         <Process active={active} title={"Checkout"} />
         <div className=" wrapper absolute top-80 z-50">

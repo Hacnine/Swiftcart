@@ -14,7 +14,12 @@ export default {
       },
     },
   
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'about': "url('src/assets/about-us.svg')",
+        'testimonial':"url('src/assets/testimonial.svg')",
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

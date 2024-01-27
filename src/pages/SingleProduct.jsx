@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../context/ProductContext";
-import logo from "../assets/logo2.jpeg";
 import MiniProductCard from "../components/MiniProductCard";
 import SingleProductDetails from "../components/SingleProductDetails";
 import PageNavigation from "../components/PageNavigation";
 import BigImage from "../components/BigImage";
 import AddToCart from "../components/AddToCart";
-import ColorInputs from "../components/ColorInputs";
+import Loading from "./Loading";
 const API = "https://api.pujakaitem.com/api/products";
 
 const SingleProduct = () => {
@@ -28,16 +27,15 @@ const SingleProduct = () => {
     reviews,
     image,
   } = singleProduct;
-
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
   }, []);
   if (isSingleLoading) {
-    return <div>Loading</div>;
+    return <Loading/>;
   }
 
   return (
-    <div>
+    <div className="mb-36">
       <PageNavigation name={name} />
       <div className="start wrapper md:flex-row flex-col mt-20 gap-9">
         <div className="md:w-2/3 w-full">

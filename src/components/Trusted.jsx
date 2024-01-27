@@ -3,7 +3,7 @@ import React from "react";
 const Trusted = () => {
   return (
     <div>
-      <div className=" bg-slate-200 flex items-center justify-center flex-col pt-8 pb-4 w-full max-w-[1300px] mx-auto">
+      <div className=" bg-slate-200 flex items-center justify-center flex-col pt-8 pb-4 w-full max-w-[1300px] mb-36 mx-auto">
         <h3 className=" text-lg font-bold text-gray-600 ">
           Trusted By 1000+ Companies
         </h3>

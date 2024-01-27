@@ -1,9 +1,12 @@
+import HeroSlider from './HeroSlider'
 import PurpleBtn from './PurpleBtn'
 
 const Hero = () => {
   return (
-    <section className=" wrapper bg-green-100/30 flex items-center flex-col md:flex-row md:justify-between wrapper py-20">
-    <div className="md:w-1/2 w-[90%] mb-3">
+    <section className=''>
+      <HeroSlider/>
+      {/* className=" wrapper bg-green-100/30 flex items-center flex-col md:flex-row md:justify-between wrapper py-20" */}
+    {/* <div className="md:w-1/2 w-[90%] mb-3">
       <p className='text-lg font-semibold'>WELCOME TO </p>
       <span className=" text-4xl   font-bold  leading-[146%]   font-open text-start text-slate-blue">
         SWIFT <span className=" text-purple-950">CART</span>
@@ -15,7 +18,7 @@ const Hero = () => {
       <img src="./images/shopping.svg"
       width={500}
       alt="" />
-    </div>
+    </div> */}
   </section>
   )
 }

@@ -6,7 +6,7 @@ import { Facebook, Google, Twitter } from "@mui/icons-material";
 const Wrapper = ({ children, pageName, welcomeMessage }) => {
 
   return (
-    <section className="bg-green-100/30 flex items-center flex-col md:flex-row md:justify-between wrapper py-10 ">
+    <section className="bg-green-100/30 flex items-center flex-col md:flex-row md:justify-between wrapper py-10 mb-36 ">
       <div className="md:w-1/2 w-[90%] ">
         <span className=" text-4xl   font-bold  leading-[146%]  uppercase font-open text-start text-slate-blue">
           {welcomeMessage}{" "}

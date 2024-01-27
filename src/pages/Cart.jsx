@@ -21,23 +21,23 @@ const Cart = () => {
     calculateTotalPrice();
   }, [cartProducts]);
 
-  // if (cartProducts.length === 0) {
-  //   return (
-  //     <div className="center flex-col my-20">
-  //       {" "}
-  //       <img src={emptycart} alt="" />
-  //       <Link to={"/product"}>
-  //         <PurpleBtn
-  //           className="mt-3 "
-  //           bg={" bg-orange-600 hover:bg-orange-500"}
-  //         >
-  //           Shop Now
-  //         </PurpleBtn>
-  //         {/* <Button sx={{bgcolor:"orangered", color:"white", mt:2}}></Button> */}
-  //       </Link>
-  //     </div>
-  //   );
-  // }
+  if (cartProducts.length === 0) {
+    return (
+      <div className="center flex-col my-20">
+        {" "}
+        <img src={emptycart} alt="" />
+        <Link to={"/product"}>
+          <PurpleBtn
+            className="mt-3 "
+            bg={" bg-orange-600 hover:bg-orange-500"}
+          >
+            Shop Now
+          </PurpleBtn>
+          {/* <Button sx={{bgcolor:"orangered", color:"white", mt:2}}></Button> */}
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <>
