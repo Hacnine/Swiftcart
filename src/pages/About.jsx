@@ -21,7 +21,6 @@ const About = () => {
 
         <div className=" center bg-[#150022ff] ">
           <AboutCard
-           
             title={"Who We Are?"}
             paragraph={
               "We are a dedicated team committed to providing top-notch products and services. With a passion for customer satisfaction, we strive to deliver quality and excellence in every aspect of your shopping experience."
@@ -29,7 +28,6 @@ const About = () => {
             bg={"bg-[#170028ff]"}
           />
           <AboutCard
-            
             title={"What Are We Do ?"}
             paragraph={
               "We provide a curated selection of high-quality products, seamless online shopping, and reliable delivery services to enhance your overall shopping experience. "
@@ -37,7 +35,6 @@ const About = () => {
             bg={"bg-[#1b002eff]"}
           />
           <AboutCard
-            
             title={"Why Will You Choose Us?"}
             paragraph={
               "At, we prioritize your shopping experience. Our commitment to quality products, seamless navigation, secure transactions, and exceptional customer service sets us apart."
@@ -52,7 +49,6 @@ const About = () => {
         ))}
       </div>
 
-      
       <div className="center flex-col font-semibold mt-14">
         <p className=" text-red-400">OUR TEAM</p>
 
@@ -70,16 +66,14 @@ const About = () => {
       <div className="center flex-col font-semibold mt-14">
         <p className=" text-red-400">OUR PARTNERS</p>
 
-        <p className="font-bold text-[46px]">Happy Clients
-</p>
+        <p className="font-bold text-[46px]">Happy Clients</p>
 
-      <div className="  grid grid-cols-4 wrapper gap-20">
-        {partners.map((image)=>(
-          <img src={image.image} alt="partners" />
-        ))}
+        <div className="  grid grid-cols-4 wrapper gap-20">
+          {partners.map((image) => (
+            <img src={image.image} alt="partners" />
+          ))}
+        </div>
       </div>
-      </div>
-
     </div>
   );
 };

@@ -3,7 +3,7 @@ import member2 from "../assets/member2.jpg";
 import member3 from "../assets/member3.jpg";
 import member4 from "../assets/member4.jpg";
 
-import client1 from "../assets/client-1.png"
+import client1 from "../assets/client-1.png";
 import client2 from "../assets/client-2.png";
 import client3 from "../assets/client-3.png";
 import client6 from "../assets/client-5.png";
@@ -12,28 +12,22 @@ import client7 from "../assets/client-6.png";
 import client8 from "../assets/client-7.png";
 import client4 from "../assets/client-8.png";
 
-
-
-
-
 export const partners = [
-  {image:client1 },
-  {image: client3},
-  {image: client2},
-  {image: client4},
-  {image: client8},
-  {image: client7},
-  {image: client6},
-  {image: client5},
-
-]
+  { image: client1 },
+  { image: client3 },
+  { image: client2 },
+  { image: client4 },
+  { image: client8 },
+  { image: client7 },
+  { image: client6 },
+  { image: client5 },
+];
 export const shortReview = [
-  {number: 313, review:'Our Clients'},
-  {number:30, review:'Total Categories'},
-  {number: 70, review:'In Country'},
-  {number: '98 %', review:'Happy Customer'},
-
-]
+  { number: 313, review: "Our Clients" },
+  { number: 30, review: "Total Categories" },
+  { number: 70, review: "In Country" },
+  { number: "98 %", review: "Happy Customer" },
+];
 export const newsForm = [
   { label: "Name", type: "name" },
 
