@@ -3,18 +3,60 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import logo from "../assets/logo.svg";
-import minilogo from "../assets/minilogo.svg";
+import minilogo from "../assets/minilogo-2.svg";
 import SearchBar from "./product/SearchBar";
+import Headroom from "react-headroom";
+import { Badge, Link } from "@mui/material";
+import {
+  FavoriteBorderOutlined,
+  Person,
+  ShoppingCart,
+} from "@mui/icons-material";
+import { useCartContext } from "../context/cartContext";
+import Navbutton from "./Navbutton";
 
 const Header = () => {
+  let { cartProducts } = useCartContext();
   return (
-    <div className="flex items-center justify-between bg-slate-200  wrapper py-2">
-      <NavLink to="/">
-        <img src={logo} alt="" className="hidden lg:block h-12 py-1 " />
-        <img src={minilogo} alt="" className="block lg:hidden h-16 p-2" />
-      </NavLink>
-      <SearchBar />
-      <Navbar />
+    <div className="relative ">
+      <div className="flex  items-center justify-center md:flex-row flex-col gap-7 shadow-md bg-header bg-center bg-no-repeat  shadow-slate-200  wrapper pt-10 pb-20 ">
+        <div className="between md:w-fit w-full">
+        <NavLink to="/">
+          {/* <img src={logo} alt="" className="hidden lg:block h-12 py-1 " /> */}
+          <img src={minilogo} alt="" className=" w-40 p-2" />
+        </NavLink>
+        <div className="block sm:hidden">
+              <Navbutton />
+            </div>
+        </div>
+        <SearchBar />
+
+        <div className=" flex items-center justify-evenly gap-6">
+          <Badge
+            badgeContent={cartProducts.length}
+            color="error"
+            sx={{ color: "MediumOrchid" }}
+          >
+            <ShoppingCart />
+          </Badge>
+
+          <Link href="#" underline="none">
+            <Badge badgeContent={4} color="error" sx={{ color: "MediumOrchid" }}>
+              <FavoriteBorderOutlined />
+            </Badge>
+          </Link>
+
+          <Link href="#" underline="none">
+            <Person sx={{ color: "MediumOrchid" }} />
+          </Link>
+        </div>
+      </div>
+
+      <div className="  absolute -bottom-12 left-0 right-0 hidden min-lg:hidden lg:block ">
+        <Navbar />
+      </div>
+
+   
     </div>
   );
 };

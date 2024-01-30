@@ -19,7 +19,7 @@ const ProductCard = (product) => {
     <div>
       
         <div className=" cursor-pointer bg-purple-100 p-2 shadow-md" key={id}>
-          <div className="group relative group-hover:scale-110 border border-gray-400">
+          <div className="group relative group-hover:scale-110">
          
             <img src={image} alt={category} className="" />
 

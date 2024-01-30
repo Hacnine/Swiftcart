@@ -4,12 +4,11 @@ import PurpleBtn from "./PurpleBtn"
 import { useCartContext } from "../context/cartContext";
 
 const NavLinks = ({className}) => {
-  let {cartProducts} = useCartContext();
 
   return (
-    <div className="  center">
-       <ul className={`${className} bg-slate-200 flex items-center justify-center lg:gap-5 gap-4 font-bold text-gray-700 text-xs  uppercase  `}>
-        <li className=" hover:text-gray-500 ">
+    <div className="   ">
+       <ul className={`${className}  w-fit  flex items-center justify-center gap-8 text-lg  font-semibold text-fuchsia-950    py-6 `}>
+        <li className=" hover:text-gray-500  ">
           <NavLink to="/">Home</NavLink>
         </li>
         <li className=" hover:text-gray-500 ">
@@ -22,7 +21,7 @@ const NavLinks = ({className}) => {
         <li className=" hover:text-gray-500 ">
           <NavLink to="/contact">Contact</NavLink>
         </li>
-        <li className=" hover:text-gray-500 ">
+        {/* <li className=" hover:text-gray-500 ">
           <NavLink to="/signin" className=" rounded-md text-white">
             <PurpleBtn children={"Sign In"} className={'text-sm'} />
           </NavLink>
@@ -32,13 +31,13 @@ const NavLinks = ({className}) => {
           <NavLink to="/signin" className=" rounded-md text-white">
             <PurpleBtn children={"Sign Up"} className={'lg:hidden block  text-sm'} bg={' bg-orange-600 hover:bg-orange-500'} />
           </NavLink>
-        </li>
-        <li className=" relative">
+        </li> */}
+        {/* <li className=" relative">
           <NavLink to="/cart" className=" text-2xl">
             <FiShoppingCart className=" z-50" />
             <span className=" text-xs absolute bg-purple-800 w-5 h-6 rounded-lg -right-3 -top-3 items-center flex justify-center text-white">{cartProducts.length}</span>
           </NavLink>
-        </li>
+        </li> */}
 
         
       </ul>

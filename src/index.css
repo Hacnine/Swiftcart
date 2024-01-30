@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@base {
+  /* body{
+      @apply font-poppins
+  } */
+  h1,h2,h3,h4,h5,h6,p, li{
+      @apply font-poppins
+  }
+}
+
 
 @layer components {
   .size-selector input:checked + label {
@@ -31,8 +43,8 @@
 }
 
 .product-effect {
-  @apply z-30  absolute top-0   w-5 group-hover:w-[100%] h-[100%] bg-transparent
-  group-hover:bg-purple-950/35  transition-all duration-1000;
+  @apply   absolute top-0   w-5 group-hover:w-[100%] h-[100%] bg-transparent
+  group-hover:bg-fuchsia-950/35 transition-all duration-1000;
 }
 
 .max {

@@ -9,6 +9,7 @@ import HeroImage from "./HeroImage";
 import  heroimage2 from '../assets/heroimage2.svg';
 import  heroimage3 from '../assets/heroimage3.svg';
 import heroimage4  from '../assets/heroimage4.svg';
+import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 
 
 const HeroSlider = () => {
@@ -16,50 +17,50 @@ const HeroSlider = () => {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1500,
 
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
-    // nextArrow: <CustomNextArrow />,
-    // prevArrow: <CustomPrevArrow />,
+    nextArrow: <NavigateNext />,
+    prevArrow: <NavigateBefore />,
     // initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1100,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 968,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 670,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+    // responsive: [
+      // {
+      //   breakpoint: 1100,
+      //   settings: {
+      //     slidesToShow: 3,
+      //     slidesToScroll: 3,
+      //     infinite: true,
+      //     dots: true,
+      //   },
+      // },
+      // {
+      //   breakpoint: 968,
+      //   settings: {
+      //     slidesToShow: 2,
+      //     slidesToScroll: 2,
+      //     initialSlide: 2,
+      //   },
+      // },
+      // {
+      //   breakpoint: 670,
+      //   settings: {
+      //     slidesToShow: 1,
+      //     slidesToScroll: 1,
+      //   },
+      // },
+    // ],
   };
   return (
     // sm:bg-green-600 md:bg-yellow-900 lg:bg-red-500
     <div className="w-full ">
       <Slider {...settings}>
        <HeroImage/>
-       <img src={heroimage2} alt="" />
-       <img src={heroimage3} alt="" />
+      <img src={heroimage2} alt="" />
+     <img src={heroimage3} alt="" />
        <img src={heroimage4} alt="" />
 
 

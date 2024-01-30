@@ -8,7 +8,7 @@ const Navbutton = () => {
   return (
     <main >
       {/* className="App" */}
-      <MdMenu className=" text-2xl" onClick={() => setOpen(true)} />
+      <MdMenu className=" text-2xl text-fuchsia-500" onClick={() => setOpen(true)} />
 
       <NavbarPopup open={open} onClose={() => setOpen(false)}>
         <NavLinks className={"flex-col gap-10 "}/>

@@ -5,26 +5,27 @@ import { Link } from "react-router-dom";
 
 const HeroImage = () => {
   return (
-    <div className=" relative">
+    <div >
+      <div className=" relative">
       <img src={heroimage1} alt="" />
 
-      <div className="absolute left-16 top-60 ">
-        <span className=" text-4xl   font-bold  leading-[146%]   font-open text-start text-slate-blue ">
-          SWIFT <span className=" text-purple-950">CART</span>
+      <div className="absolute left-16 lg:top-60 md:top-40 sm:top-10 top-5 ">
+        <span className=" text-4xl md:text-sm font-bold  leading-[146%]   font-open text-start text-slate-blue ">
+          SWIFT <span className=" text-purple-950 s   ">CART</span>
         </span>
-        <p className="uppercase tracking-wider text-red-400 mb-5">
+        <p className="uppercase tracking-wider text-red-400 mb-5 sm:text-sm md:text-base text-xs">
           Where shopping meets delight in every click!
         </p>
         <Link to={"/product"}>
           <Button
             variant="container"
             sx={{
-              bgcolor: "BurlyWood",
+              bgcolor: '#47244c',
               borderRadius: 20,
               color: "white",
 
               "&:hover": {
-                bgcolor: "#f4af90e2",
+                bgcolor: "purple",
                 color: "white",
               },
             }}
@@ -33,7 +34,7 @@ const HeroImage = () => {
                 fontSize="large"
                 sx={{
                   bgcolor: "white",
-                  color: "BurlyWood",
+                  color: '#47244c',
                   borderRadius: 7,
                   width: 40,
                   height: 40,
@@ -46,6 +47,7 @@ const HeroImage = () => {
           </Button>
         </Link>
       </div>
+    </div>
     </div>
   );
 };
