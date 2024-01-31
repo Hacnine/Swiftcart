@@ -26,7 +26,7 @@ const Navbar = () => {
     <>
       <Headroom>
         <div className="wrapper">
-          <div className="bg-slate-200 between px-4 rounded-b-3xl shadow shadow-fuchsia-60">
+          <div className="bg-slate-200 between px-4 rounded-b-3xl shadow-md shadow-slate-600">
             <div className=" pr-2 border-r border-gray-300">
               <Button
                 startIcon={<FiMenu className=" font-bold text-lg text-white" />}

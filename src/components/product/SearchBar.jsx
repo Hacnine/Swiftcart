@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
+import { MobileOffSharp } from '@mui/icons-material';
+import { ListItemIcon } from '@mui/material';
 const SearchBar = () => {
   const {filter:{text},updateFilterValue} = useFilterContext();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,18 +26,37 @@ const SearchBar = () => {
       <Button
         onClick={handleClick}
       >
-        <p className=" font-semibold capitalize text-slate-900">All Categories</p>
+        <p className=" font-semibold capitalize text-slate-600">All Categories</p>
       </Button>
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        sx={{
+         
+            ".MuiMenu-root": {
+              width:800,
+            },
+         }}
+        className=' w-52'
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem inset onClick={handleClose}
+          sx={{
+         
+            ".MuiMenuItem-root": {
+              width:800,
+            },
+         }}
+        >
+          
+          <ListItemIcon>
+            <MobileOffSharp />
+          </ListItemIcon>
+        </MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
         <MenuItem onClick={handleClose}>Logout</MenuItem>
       </Menu>

@@ -19,13 +19,13 @@ const Header = () => {
   let { cartProducts } = useCartContext();
   return (
     <div className="relative ">
-      <div className="flex  items-center justify-center md:flex-row flex-col gap-7 shadow-md bg-header bg-center bg-no-repeat  shadow-slate-200  wrapper pt-10 pb-20 ">
+      <div className="flex  items-center justify-center md:flex-row flex-col gap-7 shadow-md bg-header bg-center bg-no-repeat  shadow-slate-600  wrapper pt-10 pb-20 ">
         <div className="between md:w-fit w-full">
         <NavLink to="/">
           {/* <img src={logo} alt="" className="hidden lg:block h-12 py-1 " /> */}
           <img src={minilogo} alt="" className=" w-40 p-2" />
         </NavLink>
-        <div className="block sm:hidden">
+        <div className="block md:hidden">
               <Navbutton />
             </div>
         </div>
@@ -49,6 +49,10 @@ const Header = () => {
           <Link href="#" underline="none">
             <Person sx={{ color: "MediumOrchid" }} />
           </Link>
+
+          <div className="min-lg:block md:hidden">
+              <Navbutton />
+            </div>
         </div>
       </div>
 

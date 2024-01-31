@@ -25,6 +25,7 @@ const About = () => {
             paragraph={
               "We are a dedicated team committed to providing top-notch products and services. With a passion for customer satisfaction, we strive to deliver quality and excellence in every aspect of your shopping experience."
             }
+            secondaryPara={'Your go-to e-commerce destination for seamless shopping.'}
             bg={"bg-[#170028ff]"}
           />
           <AboutCard
@@ -32,6 +33,7 @@ const About = () => {
             paragraph={
               "We provide a curated selection of high-quality products, seamless online shopping, and reliable delivery services to enhance your overall shopping experience. "
             }
+            secondaryPara={'We simplify and elevate your online shopping with a diverse product selection.'}
             bg={"bg-[#1b002eff]"}
           />
           <AboutCard
@@ -39,14 +41,17 @@ const About = () => {
             paragraph={
               "At, we prioritize your shopping experience. Our commitment to quality products, seamless navigation, secure transactions, and exceptional customer service sets us apart."
             }
+            secondaryPara={'Quality products, user-friendly interface, and outstanding customer service.'}
             bg={"bg-[#200038ff]"}
           />
         </div>
       </div>
-      <div className=" grid lg:grid-cols-4 md:grid-cols-2  mt-14 wrapper">
+      <div className=" flex items-center justify-center">
+      <div className=" grid lg:grid-cols-4 md:grid-cols-2 gap-3 mt-14 wrapper">
         {shortReview.map((element, index) => (
           <ShortReview {...element} />
         ))}
+      </div>
       </div>
 
       <div className="center flex-col font-semibold mt-14">
@@ -66,7 +71,7 @@ const About = () => {
       <div className="center flex-col font-semibold mt-14">
         <p className=" text-red-400">OUR PARTNERS</p>
 
-        <p className="font-bold text-[46px]">Happy Clients</p>
+        <p className="font-bold text-[46px] mb-8">Happy Clients</p>
 
         <div className="  grid grid-cols-4 wrapper gap-20">
           {partners.map((image) => (
