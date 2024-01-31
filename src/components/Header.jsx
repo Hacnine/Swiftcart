@@ -21,13 +21,13 @@ const Header = () => {
     <div className="relative ">
       <div className="flex  items-center justify-center md:flex-row flex-col gap-7 shadow-md bg-header bg-center bg-no-repeat  shadow-slate-600  wrapper pt-10 pb-20 ">
         <div className="between md:w-fit w-full">
-        <NavLink to="/">
-          {/* <img src={logo} alt="" className="hidden lg:block h-12 py-1 " /> */}
-          <img src={minilogo} alt="" className=" w-40 p-2" />
-        </NavLink>
-        <div className="block md:hidden">
-              <Navbutton />
-            </div>
+          <NavLink to="/">
+            {/* <img src={logo} alt="" className="hidden lg:block h-12 py-1 " /> */}
+            <img src={minilogo} alt="" className=" w-40 p-2" />
+          </NavLink>
+          <div className="block md:hidden">
+            <Navbutton />
+          </div>
         </div>
         <SearchBar />
 
@@ -41,7 +41,11 @@ const Header = () => {
           </Badge>
 
           <Link href="#" underline="none">
-            <Badge badgeContent={4} color="error" sx={{ color: "MediumOrchid" }}>
+            <Badge
+              badgeContent={4}
+              color="error"
+              sx={{ color: "MediumOrchid" }}
+            >
               <FavoriteBorderOutlined />
             </Badge>
           </Link>
@@ -51,16 +55,14 @@ const Header = () => {
           </Link>
 
           <div className="min-lg:block md:hidden">
-              <Navbutton />
-            </div>
+            <Navbutton />
+          </div>
         </div>
       </div>
 
       <div className="  absolute -bottom-12 left-0 right-0 hidden min-lg:hidden lg:block ">
         <Navbar />
       </div>
-
-   
     </div>
   );
 };

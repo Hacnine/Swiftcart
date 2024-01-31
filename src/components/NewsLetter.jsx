@@ -14,9 +14,7 @@ const NewsLetter = () => {
           <input
             type="text"
             placeholder=""
-            className="bg-transparent w-[70%] h-[50px]  border border-transparent outline-none px-2 focus:border-transparent   
-
-        "
+            className="bg-transparent w-[70%] h-[50px] px-2   border-transparent focus:border-transparent   focus:ring-transparent"
           />
           <div className="  ">
             <PurpleBtn

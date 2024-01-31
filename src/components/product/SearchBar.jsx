@@ -67,7 +67,7 @@ const SearchBar = () => {
           name="text"
           value={text}
           onChange={updateFilterValue}
-          className="w-[100%] flex-1 focus:border-transparent border-transparent focus:ring-transparent focus:outline-none rounded-md "
+          className="w-[100%] flex-1 border-transparent focus:border-transparent   focus:ring-transparent rounded-md "
           placeholder="Search..."
         />
       </div>
