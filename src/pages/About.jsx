@@ -17,7 +17,7 @@ const About = () => {
       background: `url(${background})`,
       backgroundSize: 'cover', // Adjust as needed (e.g., 'contain', '50% 50%', etc.)
       backgroundRepeat: 'no-repeat',
-      height: '100vh', // Set the desired height
+      height: '400px', // Set the desired height
       // Add other styling properties as needed
     },
     // Add other styles for child elements if necessary
@@ -29,34 +29,28 @@ const About = () => {
           About Us
         </p>
 
-        <div className=" center bg-[#150022ff] ">
+        <div className="  hidden md:flex items-center justify-center flex-col md:flex-row bg-[#150022ff] ">
           <AboutCard
             title={"Who We Are?"}
-            paragraph={
-              "We are a dedicated team committed to providing top-notch products and services. With a passion for customer satisfaction, we strive to deliver quality and excellence in every aspect of your shopping experience."
-            }
+           
             secondaryPara={'Your go-to e-commerce destination for seamless shopping.'}
             bg={"bg-[#170028ff]"}
           />
           <AboutCard
             title={"What Are We Do ?"}
-            paragraph={
-              "We provide a curated selection of high-quality products, seamless online shopping, and reliable delivery services to enhance your overall shopping experience. "
-            }
+           
             secondaryPara={'We simplify and elevate your online shopping with a diverse product selection.'}
             bg={"bg-[#1b002eff]"}
           />
           <AboutCard
             title={"Why Will You Choose Us?"}
-            paragraph={
-              "At, we prioritize your shopping experience. Our commitment to quality products, seamless navigation, secure transactions, and exceptional customer service sets us apart."
-            }
+           
             secondaryPara={'Quality products, user-friendly interface, and outstanding customer service.'}
             bg={"bg-[#200038ff]"}
           />
         </div>
       </div>
-      <div className=" flex items-center justify-center">
+      <div className=" flex items-center justify-center ">
       <div className=" grid lg:grid-cols-4 md:grid-cols-2 gap-3 mt-14 wrapper">
         {shortReview.map((element, index) => (
           <ShortReview {...element} />

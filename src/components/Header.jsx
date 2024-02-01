@@ -14,13 +14,15 @@ import {
 } from "@mui/icons-material";
 import { useCartContext } from "../context/cartContext";
 import Navbutton from "./Navbutton";
+import backgroundImageUrl from '../assets/header-bg.svg';
 
 const Header = () => {
   let { cartProducts } = useCartContext();
+
   return (
-    <div className="relative ">
-      <div className="flex  items-center justify-center md:flex-row flex-col gap-7 shadow-md bg-darkpurple bg-center bg-no-repeat  shadow-slate-600  wrapper pt-10 pb-20 ">
-        <div className="between md:w-fit w-full">
+    <div className="relative  " >
+      <div className="flex bg-darkpurple  items-center justify-center md:flex-row flex-col gap-7 shadow-md  shadow-slate-600  wrapper pt-10 pb-20 ">
+        <div className="between md:w-fit w-full" >
           <NavLink to="/">
             {/* <img src={logo} alt="" className="hidden lg:block h-12 py-1 " /> */}
             <img src={minilogo} alt="" className=" w-40 p-2" />
