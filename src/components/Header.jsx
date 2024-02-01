@@ -19,7 +19,7 @@ const Header = () => {
   let { cartProducts } = useCartContext();
   return (
     <div className="relative ">
-      <div className="flex  items-center justify-center md:flex-row flex-col gap-7 shadow-md bg-header bg-center bg-no-repeat  shadow-slate-600  wrapper pt-10 pb-20 ">
+      <div className="flex  items-center justify-center md:flex-row flex-col gap-7 shadow-md bg-darkpurple bg-center bg-no-repeat  shadow-slate-600  wrapper pt-10 pb-20 ">
         <div className="between md:w-fit w-full">
           <NavLink to="/">
             {/* <img src={logo} alt="" className="hidden lg:block h-12 py-1 " /> */}
