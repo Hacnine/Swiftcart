@@ -9,12 +9,22 @@ import CommonSlider from "../components/CommonSlider";
 import ProfileCard from "../components/about/ProfileCard";
 import { memberInfo, partners, shortReview } from "../constants";
 import ShortReview from "../components/about/ShortReview";
+import background from '../assets/about-us.svg'
 
 const About = () => {
-  const { start } = useProductContext();
+  const styles = {
+    container: {
+      background: `url(${background})`,
+      backgroundSize: 'cover', // Adjust as needed (e.g., 'contain', '50% 50%', etc.)
+      backgroundRepeat: 'no-repeat',
+      height: '100vh', // Set the desired height
+      // Add other styling properties as needed
+    },
+    // Add other styles for child elements if necessary
+  };
   return (
     <div className="mb-36  ">
-      <div className=" bg-about  bg-center bg-no-repeat pt-5 ">
+      <div className="   bg-center bg-no-repeat pt-5 "style={styles.container}>
         <p className="  font-sans font-bold text-5xl mt-28 text-gray-900 py-2 bg-white/40 w-full text-center mb-10">
           About Us
         </p>
