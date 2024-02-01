@@ -41,14 +41,14 @@ const Cart = () => {
 
   return (
     <>
-      <div className="  relative">
+      <div className="  ">
         
           <Process active={active} title={'Cart'} />
      
 
         {/*  flex flex-row md:flex-col */}
 
-        <div className=" wrapper flex items-start justify-start md:flex-row flex-col absolute top-80 gap-5 fill-zinc-500 z-50 w-full">
+        <div className=" -translate-y-10 mb-32 wrapper flex items-start justify-start md:flex-row flex-col  gap-5 fill-zinc-500 z-50 w-full">
           {/* md:w-[70%] w-full */}
 
 

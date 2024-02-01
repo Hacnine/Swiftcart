@@ -25,22 +25,24 @@ const Header = () => {
             {/* <img src={logo} alt="" className="hidden lg:block h-12 py-1 " /> */}
             <img src={minilogo} alt="" className=" w-40 p-2" />
           </NavLink>
-          <div className="block md:hidden">
+          <div className="block  md:hidden">
             <Navbutton />
           </div>
         </div>
         <SearchBar />
 
         <div className=" flex items-center justify-evenly gap-6">
-          <Badge
-            badgeContent={cartProducts.length}
-            color="error"
-            sx={{ color: "MediumOrchid" }}
-          >
-            <ShoppingCart />
-          </Badge>
+          <NavLink to={"/cart"}>
+            <Badge
+              badgeContent={cartProducts.length}
+              color="error"
+              sx={{ color: "MediumOrchid" }}
+            >
+              <ShoppingCart />
+            </Badge>
+          </NavLink>
 
-          <Link href="#" underline="none">
+          <NavLink to={"/"}>
             <Badge
               badgeContent={4}
               color="error"
@@ -48,13 +50,13 @@ const Header = () => {
             >
               <FavoriteBorderOutlined />
             </Badge>
-          </Link>
+          </NavLink>
 
-          <Link href="#" underline="none">
+          <NavLink to={"/cart"}>
             <Person sx={{ color: "MediumOrchid" }} />
-          </Link>
+          </NavLink>
 
-          <div className="min-lg:block md:hidden">
+          <div className="min-lg:block md:block lg:hidden sm: hidden">
             <Navbutton />
           </div>
         </div>
