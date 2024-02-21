@@ -4,7 +4,8 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-const API = "https://api.pujakaitem.com/api/products";
+// const API = "https://api.pujakaitem.com/api/products";
+const API = "https://api.jsonbin.io/v3/b/65b617171f5677401f27494b";
 
 const initialState = {
   isLoading: false,
@@ -22,33 +23,30 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "SET_LOADING" });
     try {
       const response = await axios.get(url);
-      const products = await response.data;
-      // console.log(response)
+      const products = await response.data.record // Corrected line
+      console.log(response);
       dispatch({ type: "SET_API_DATA", payload: products });
     } catch (error) {
       dispatch({ type: "API_ERROR" });
     }
   };
-
+  
   const getSingleProduct = async (url) => {
     dispatch({ type: "SET_SINGLE_LOADING" });
     try {
       const response = await axios.get(url);
-      const singleProduct = await response.data;
+      const singleProduct = await response.data// Corrected line
       dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
     } catch (error) {
       dispatch({ type: "SET_SINGLE_ERROR" });
     }
   };
-
-
-
+  
   const getColorBaseProducts = async (url) => {
     dispatch({ type: "SET_LOADING" });
     try {
       const response = await axios.get(url);
-      const products = await response.data;
-      // console.log(response)
+      const products = await response.data.record
       dispatch({ type: "SET_COLOR_BASE_PRODUCT", payload: products });
     } catch (error) {
       dispatch({ type: "API_ERROR" });

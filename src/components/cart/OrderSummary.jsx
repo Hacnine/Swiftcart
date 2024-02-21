@@ -14,7 +14,7 @@ const OrderSummary = ({ setActive, btnName, linkName }) => {
     }
   };
   return (
-    <div className="rounded-lg  text-xs text-white font-semibold tracking-wide  md:w-[30%]  w-full  bg-white shadow-lg shadow-gray-400 py-6 px-6 ">
+    <div className="rounded-lg  text-xs text-white font-semibold tracking-wide  md:w-[350px] w-[80%]  bg-white shadow-lg shadow-gray-400 py-6 px-6 ">
       <p className="text-start text-xl text-slate-800 font-bold">Cart Totals</p>
 
       <OrderSummaryItems title={"TOTAL ITEMS"} amount={totalItem} />
@@ -38,7 +38,7 @@ const OrderSummary = ({ setActive, btnName, linkName }) => {
             children={btnName}
             className={"text-xs text-white "}
             bg={
-              "font-semibold tracking-wide py-3 bg-[#08c451] rounded-md w-[90%]"
+              "font-semibold tracking-wide py-3 bg-[#08c451] rounded-md md:w-[190px] w-[90%]"
             }
           />
         </Link>

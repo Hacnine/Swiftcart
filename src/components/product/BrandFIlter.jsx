@@ -25,8 +25,8 @@ const BrandFIlter = () => {
         sortingData(selected);
       }, [selected])
   return (
-    <div className='mt-5'>
-      <p className='text-lg font-bold mb-5 text-gray-800'>Brand</p>
+    <div className='mt-2'>
+      <p className='text-lg font-bold mb-2 text-gray-800'>Brand</p>
       <SelectBox selected={selected} setSelected={setSelected} sort={companyOnlyData}/>
     </div>
   )

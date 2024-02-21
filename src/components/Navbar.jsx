@@ -11,8 +11,11 @@ import { Search } from "@mui/icons-material";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Headroom from "react-headroom";
 import { FaHeadphones } from "react-icons/fa";
+import { useFilterContext } from "../context/filterContext";
 
 const Navbar = () => {
+  const { allProducts, getUniqueData, updateFilterValue } = useFilterContext();
+  const categoryOnlyData = getUniqueData(allProducts, "category");
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -20,6 +23,16 @@ const Navbar = () => {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const styles = {
+    backgroundColor: "white",
+    px: 2,
+    width: 225,
+    "&:hover": {
+      backgroundColor: "#47244c",
+      color: "white",
+    },
   };
 
   return (
@@ -31,13 +44,14 @@ const Navbar = () => {
               <Button
                 startIcon={<FiMenu className=" font-bold text-lg text-white" />}
                 endIcon={<MdArrowDropDown className=" text-white text-4xl" />}
-                className="bg-chocolate hover:bg-gray-500 text-white"
+                className="bg-chocolate hover:bg-gray-500 text-white "
                 sx={{
                   backgroundColor: "#47244c",
                   px: 3,
                   py: 2,
                   width: 225,
                   borderBottomLeftRadius: 15,
+                  // fontWeight: 600,
                   "&:hover": {
                     backgroundColor: "#47244c",
                   },
@@ -57,16 +71,26 @@ const Navbar = () => {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
+                // style={{
+                //   borderRadius: "20px 0 0 0",
+                // }}
+                sx={{
+                  mt: 1,
+                  borderRadius: "90px",
+                  borderTopLeftRadius: "60px",
+                  // borderRadius: "20px 0 0 0"
+                }}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                {categoryOnlyData.map((category, index) => (
+                  <MenuItem onClick={handleClose} sx={styles}>
+                    {category}
+                  </MenuItem>
+                ))}
               </Menu>
             </div>
             <div className=" center   ">
               <NavLinks />
             </div>
-          
 
             <div className="center gap-2 border-l pl-2 border-gray-300">
               <FaHeadphones className=" text-5xl text-fuchsia-950 hover:scale-110 transition-transform duration-300" />

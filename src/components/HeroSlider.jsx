@@ -1,15 +1,9 @@
-import Slider from "react-slick";
-import TestimonialCard from "./about/TestimonialCard";
-import avatar1 from '../assets/heroimage1.svg';
-import avatar2 from '../assets/avatar2.jpg';
-import avatar3 from '../assets/avatar3.jpg';
-import avatar4 from '../assets/avatar4.jpg';
 import HeroImage from "./HeroImage";
-
 import  heroimage2 from '../assets/heroimage2.svg';
 import  heroimage3 from '../assets/heroimage3.svg';
 import heroimage4  from '../assets/heroimage4.svg';
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
+import Slider from "react-slick";
 
 
 const HeroSlider = () => {
@@ -18,7 +12,6 @@ const HeroSlider = () => {
     dots: true,
     infinite: true,
     speed: 1500,
-
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -26,36 +19,37 @@ const HeroSlider = () => {
     pauseOnHover: true,
     nextArrow: <NavigateNext />,
     prevArrow: <NavigateBefore />,
-    // initialSlide: 0,
-    // responsive: [
-      // {
-      //   breakpoint: 1100,
-      //   settings: {
-      //     slidesToShow: 3,
-      //     slidesToScroll: 3,
-      //     infinite: true,
-      //     dots: true,
-      //   },
-      // },
-      // {
-      //   breakpoint: 968,
-      //   settings: {
-      //     slidesToShow: 2,
-      //     slidesToScroll: 2,
-      //     initialSlide: 2,
-      //   },
-      // },
-      // {
-      //   breakpoint: 670,
-      //   settings: {
-      //     slidesToShow: 1,
-      //     slidesToScroll: 1,
-      //   },
-      // },
-    // ],
+    appendDots: (dots) => (
+      <div
+        style={{
+          bottom: '20px', // Adjust position as needed
+        }}
+      >
+        <ul style={{ margin: '0px' }}>
+          {/* Remove default margin */}
+          {dots.map((dot, index) => (
+            <li
+              key={index}
+              className=" border-4 border-purple-900 w-0.5 h-0.5 rounded-full"
+              // style={{
+              //   display: 'inline-block',
+              //   marginRight: '5px', // Adjust spacing as needed
+              //   borderRadius: '50%', // Make dots circular
+              //   width: '10px', // Adjust size as needed
+              //   height: '10px', // Adjust size as needed
+              //   backgroundColor: dot.props.className.includes('slick-active')
+              //     ? '#000'
+              //     : '#ccc', // Change color based on active/inactive state
+              //   cursor: 'pointer',
+              // }}
+            ></li>
+          ))}
+        </ul>
+      </div>
+    ),
   };
+
   return (
-    // sm:bg-green-600 md:bg-yellow-900 lg:bg-red-500
     <div className="w-full ">
       <Slider {...settings}>
        <HeroImage/>

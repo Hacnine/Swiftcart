@@ -46,9 +46,15 @@ const CartCard = ({
 
   return (
     <tbody className="">
-      <tr className="border-b flex flex-col flex-no wrap sm:table-row">
+      <tr className="border-b table-row">
         <td className="  border-b-2 text-center">
-          <div className="center">
+          <div className="flex items-center">
+          <IconButton
+            sx={{ color: "red", "&:hover": { color: "OrangeRed" } }}
+            onClick={deleteProduct}
+          >
+            <Delete fontSize="small" />
+          </IconButton>
             <img
               src={image}
               alt={name}
@@ -60,7 +66,7 @@ const CartCard = ({
                 {name}
               </a>
               <div
-                className={`w-4 h-4 mt-2 rounded-full`}
+                className={`w-3 h-3 mt-2 rounded-full`}
                 style={{ backgroundColor: `${check}` }}
               ></div>
             </div>
@@ -77,15 +83,7 @@ const CartCard = ({
         <td className="px-4 py-2 border-b-2 text-center">
           {Math.round(price / 100)}
         </td>
-        <td className="px-4 py-2 border-b-2 text-center">{subTotal}</td>
-        <td className="px-4 py-2 border-b-2 text-center">
-          <IconButton
-            sx={{ color: "red", "&:hover": { color: "OrangeRed" } }}
-            onClick={deleteProduct}
-          >
-            <Delete fontSize="small" />
-          </IconButton>
-        </td>
+        <td className="px-4 pb-10 border-b-2 text-center lg:block hidden">{subTotal}</td>
       </tr>
     </tbody>
 

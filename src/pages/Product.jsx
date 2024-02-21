@@ -25,13 +25,13 @@ const Product = () => {
 
   return (
     <>
-      <div className="wrapper flex items-start justify-between mt-14 mb-36">
+      <div className="wrapper flex items-start justify-between mt-14 mb-36 ">
         
-        <div className="w-[22%] gap-4 center shadow-">
+        <div className="w-[22%] gap-4  hidden md:block">
           <Sidebar />
-          <BiSolidChevronRightCircle className="text-purple-950 h-7 w-7 cursor-pointer" />
+      
         </div>
-        <div className="w-[78%]">
+        <div className="md:w-[78%]">
           <ProductList />
         </div>
       </div>

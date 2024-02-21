@@ -30,12 +30,9 @@ const AddToCart = ({ product }) => {
   };
 
   const sentCartItem = () => {
-    // Check if the product is already in the cart
     const existingProduct = cartProducts.find((item) => item.id === id);
 
     if (existingProduct) {
-      // If product is already in the cart, update the quantity
-      // addCartItem(id, name, image[0].url, existingProduct.amount + amount, check, price, stock);
     } else {
       // If product is not in the cart, add it
       addCartItem(id, name, image[0].url, amount, check, price, stock);

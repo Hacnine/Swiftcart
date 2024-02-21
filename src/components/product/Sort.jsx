@@ -8,29 +8,45 @@ import { GoChevronUp } from "react-icons/go";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { HiMiniChevronUpDown } from "react-icons/hi2";
 import SelectBox from "../SelectBox";
+import { Drawer } from "@mui/material";
+import Sidebar from "./Sidebar";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const sort = [
-  "Default" ,
-  "Price-High to Low" ,
-  "Price-Low to High" ,
-  "Name(A-Z)" ,
-  "Name(Z-A)" ,
+  "Default",
+  "Price-High to Low",
+  "Price-Low to High",
+  "Name(A-Z)",
+  "Name(Z-A)",
 ];
 
 const Sort = ({ setGridView, gridView, products, sortingData }) => {
   const [selected, setSelected] = useState(sort[0]);
-  // const setData = () => {
-  //   sortingData(selected);
-  // };
 
-  useEffect(()=>{
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer = (openStatus) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setOpen(openStatus);
+  };
+  useEffect(() => {
     sortingData(selected);
-  }, [selected])
+  }, [selected]);
 
   return (
-    <div>
+    <>
       <div className="flex items-center justify-between   mb-10 px-2">
-        <div className="center gap-2">
+  
+
+        <GiHamburgerMenu onClick={toggleDrawer(true)} className=" block md:hidden text-darkpurple cursor-pointer font-bold text-xl" />
+
+        <div className="md:flex items-center hidden gap-2">
           <BsGridFill
             className={`${
               gridView
@@ -49,17 +65,34 @@ const Sort = ({ setGridView, gridView, products, sortingData }) => {
           />
         </div>
 
-        <div className=" text-gray-600 font-semibold text-sm center gap-1   border-b-2 md:w-40 p-1.5">
-          Total <p className=" text-red-400"> {products.length} </p> Products
-        </div>
+        <span className=" text-gray-600 font-semibold text-sm gap-1   border-b-2 md:w-40 p-1.5 hidden md:block">
+          Total <span className=" text-red-400"> {products.length} </span> Products
+        </span>
 
-        <div className=" md:w-72 w-[40%]">
-
-          <SelectBox selected={selected} setSelected={setSelected} sort={sort}/>
-         
+        <div className=" w-[190px]">
+          <SelectBox
+            selected={selected}
+            setSelected={setSelected}
+            sort={sort}
+          />
         </div>
       </div>
-    </div>
+      <Drawer
+        anchor="left"
+        open={open}
+        onClose={toggleDrawer(false)}
+        sx={{
+          "& .MuiDrawer-paper": {
+            px: 7,
+            py: 2,
+          },
+        }}
+      >
+        <div onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
+          <Sidebar />
+        </div>
+      </Drawer>
+    </>
   );
 };
 

@@ -13,9 +13,9 @@ const Sidebar = () => {
   const categoryOnlyData = getUniqueData(allProducts, "category");
 
   return (
-    <div className=" space-y-4">
+    <div className=" space-y-2">
       <div className=" ">
-        <h1 className=" text-lg font-bold mb-5 text-gray-800">Category</h1>
+        <h1 className=" text-lg font-bold mb-2 text-gray-800">Category</h1>
         {categoryOnlyData.map((item) => (
           <div className="start font-semibold text-slate-950 p-2 rounded-sm w-full  cursor-pointer ">
             <CategorySidebar title={item} />

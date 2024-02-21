@@ -1,13 +1,26 @@
 import React from "react";
 
 const filterReducer = (state, action) => {
+
+  const filterByCategory = (categoryName) => {
+    if (categoryName === "All") {
+      return state.allProducts;
+    } else {
+      const temporaryData = state.allProducts.filter((currentElement) => {
+        return currentElement.category === categoryName;
+      });
+      return temporaryData;
+    }
+  };
+
   switch (action.type) {
     case "LOAD_FILTER_PRODUCTS":
       return {
         ...state,
         allProducts: [...action.payload],
         filterProducts: [...action.payload],
-
+        searchedProducts:  [...action.payload],
+        searchResultProducts:  [...action.payload],
       };
 
     case "SET_GRID_VIEW":
@@ -92,7 +105,25 @@ const filterReducer = (state, action) => {
         filterProducts: sortedProducts,
       };
 
+    case "SORT_BY_CATEGORY":
    
+      const categorizedData = filterByCategory(action.payload);
+      console.log(categorizedData);
+      return {
+        ...state,
+        filterProducts: categorizedData,
+      };
+
+      case "SORT_BY_CATEGORY_FOR_SEARCH_BAR":
+   
+      const categorizedDataForSearchBar = filterByCategory(action.payload);
+      console.log('categorizedDataForSearchBar', categorizedDataForSearchBar);
+      return {
+        ...state,
+        searchedProducts: categorizedDataForSearchBar,
+        searchResultProducts:categorizedDataForSearchBar,
+      };
+
     case "UPDATE_FILTERS_VALUE":
       const { name, value } = action.payload;
 
@@ -104,58 +135,9 @@ const filterReducer = (state, action) => {
         },
       };
 
-    case "SET_MOBILE_DATA":
-      const mobileData = action.payload.filter((currentElement) => {
-        return currentElement.category === "mobile";
-      });
-
-      return {
-        ...state,
-        filterProducts: mobileData,
-      };
-
-    case "SET_LAPTOP_DATA":
-      const laptopData = action.payload.filter((currentElement) => {
-        return currentElement.category === "laptop";
-      });
-
-      return {
-        ...state,
-        filterProducts: laptopData,
-      };
-
-    case "SET_ACCESSORIES_DATA":
-      const accessoriesData = action.payload.filter((currentElement) => {
-        return currentElement.category === "accessories";
-      });
-
-      return {
-        ...state,
-        filterProducts: accessoriesData,
-      };
-    case "SET_WATCH_DATA":
-      const watchData = action.payload.filter((currentElement) => {
-        return currentElement.category === "watch";
-      });
-
-      return {
-        ...state,
-        filterProducts: watchData,
-      };
-
-    case "SET_COMPUTER_DATA":
-      const computerData = action.payload.filter((currentElement) => {
-        return currentElement.category === "computer";
-      });
-
-      return {
-        ...state,
-        filterProducts: computerData,
-      };
-
     case "FILTER_PRODUCTS":
-      let { allProducts } = state;
-      let tempFilterProducts = [...allProducts];
+      let { searchedProducts } = state;
+      let tempFilterProducts = [...searchedProducts];
       const { text } = state.filter;
       let lowerText = text.toLowerCase();
 
@@ -167,8 +149,27 @@ const filterReducer = (state, action) => {
 
       return {
         ...state,
-        filterProducts: tempFilterProducts,
+        searchResultProducts: tempFilterProducts,
       };
+
+
+      // case " SEARCHED_PRODUCTS":
+      //   // let { allProducts } = state;
+      //   // let tempFilterProducts = [...allProducts];
+      //   const { text2 } = state.searchFilter;
+      //   let lowerCaseText = text.toLowerCase();
+  
+      //   if (text2) {
+      //     tempFilterProducts = tempFilterProducts.filter((currentElement) => {
+      //       return currentElement.name.includes(lowerCaseText);
+      //     });
+      //   }
+  
+      //   return {
+      //     ...state,
+      //     searchedProducts: tempFilterProducts,
+      //   };
+
 
     case "GET_COLORED_FILTERS":
       const { currentColor, allProduct } = action.payload;
@@ -190,8 +191,8 @@ const filterReducer = (state, action) => {
 
     case "GET_PRICE_FILTERS":
       let price = action.payload;
-      const minPrice = price[0]*100;
-      const maxPrice = price[1]*100;
+      const minPrice = price[0] * 100;
+      const maxPrice = price[1] * 100;
       // Filter products based on the price range
       const productsInPriceRange = state.allProducts.filter(
         (product) => product.price >= minPrice && product.price <= maxPrice
@@ -199,9 +200,8 @@ const filterReducer = (state, action) => {
 
       return {
         ...state,
-        filterProducts:productsInPriceRange,
+        filterProducts: productsInPriceRange,
       };
-
   }
   return state;
 };

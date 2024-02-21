@@ -23,7 +23,7 @@ const Cart = () => {
 
   if (cartProducts.length === 0) {
     return (
-      <div className="center flex-col my-20">
+      <div className="center flex-col my-20 pb-7">
         {" "}
         <img src={emptycart} alt="" />
         <Link to={"/product"}>
@@ -43,24 +43,23 @@ const Cart = () => {
     <>
       <div className="  ">
         
-          <Process active={active} title={'Cart'} />
+          {/* <Process active={active} title={'Cart'} /> */}
      
 
         {/*  flex flex-row md:flex-col */}
 
-        <div className=" -translate-y-10 mb-32 wrapper flex items-start justify-start md:flex-row flex-col  gap-5 fill-zinc-500 z-50 w-full">
+        <div className=" mt-36 -translate-y-10 mb-32 wrapper between md:flex-row flex-col  gap-5 fill-zinc-500 z-50 w-full">
           {/* md:w-[70%] w-full */}
 
 
           
           <table className="table-auto border-separate border-spacing-2 rounded-lg text-xs bg-white shadow-md shadow-slate-300 w-full relative">
         <thead className="">
-          <tr className="text-gray-600 flex flex-col sm:table-row w-[29%] rounded-lg border border-black">
-            <th className="px-4 py-2 rounded-lg">Product Name</th>
-            <th className="px-4 py-2 rounded-md text-center">Quantity</th>
-            <th className="px-4 py-2 rounded-md">Unit Price</th>
-            <th className="px-4 py-2 rounded-md">Sub Total</th>
-            <th className="px-4 py-2 rounded-md">Delete</th>
+          <tr className="text-gray-600 table-row w-[29%] rounded-lg border border-black">
+            <th className="pl-12 py-2  start">Product</th>
+            <th className="px-2 py-2  text-center">Quantity</th>
+            <th className="px-2 py-2 ">Unit Price</th>
+            <th className="px-2 py-2  lg:block hidden">Sub Total</th>
           </tr>
         </thead>
     

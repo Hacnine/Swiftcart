@@ -4,9 +4,9 @@
 <svg
    version="1.1"
    id="svg1"
-   width="175.63858"
+   width="165.27164"
    height="101.50824"
-   viewBox="0 0 175.63858 101.50824"
+   viewBox="0 0 165.27164 101.50824"
    sodipodi:docname="minilogo-2.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    xml:space="preserve"
@@ -89,9 +89,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="1.8561553"
-     inkscape:cx="75.155349"
-     inkscape:cy="66.266007"
+     inkscape:zoom="2.625"
+     inkscape:cx="108.19048"
+     inkscape:cy="34.666667"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
@@ -101,7 +101,21 @@
      inkscape:groupmode="layer"
      inkscape:label="Image"
      id="g1"
-     transform="translate(-36.418533,-52.099157)"><path
+     transform="translate(-46.785469,-52.099157)"><rect
+       style="fill:#00153c;fill-opacity:1;stroke-width:3.56505"
+       id="rect697"
+       width="61.949509"
+       height="11.11202"
+       x="69.390015"
+       y="62.918011"
+       ry="5.5560098" /><rect
+       style="fill:#6b1396;fill-opacity:1;stroke-width:3.24665"
+       id="rect701"
+       width="51.378078"
+       height="11.11202"
+       x="60.113411"
+       y="111.67471"
+       ry="5.5560098" /><path
        id="path453"
        style="fill:#47244c;fill-opacity:1;stroke:#6b1396;stroke-width:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 168.15235,151.6074 H 101.9908 v -48.77406 h 108.06631 v 6.8693 a 41.904762,41.904762 135 0 1 -41.90476,41.90476 z"
@@ -134,42 +148,17 @@
          x="125.23196"
          y="90.094536"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.0474px;font-family:Century;-inkscape-font-specification:'Century, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#fdfdff;fill-opacity:1;stroke-width:18.0427">SWIFT</tspan></text><rect
-       style="fill:#09051e;fill-opacity:1;stroke-width:3.56329"
-       id="rect367"
-       width="61.888344"
-       height="11.11202"
-       x="63.355934"
-       y="62.918011"
-       ry="5.5560098" /><rect
-       style="fill:#09051e;fill-opacity:1;stroke-width:3.24665"
-       id="rect697"
-       width="51.378078"
-       height="11.11202"
-       x="73.866203"
-       y="62.918011"
-       ry="5.5560098" /><rect
        style="fill:#09051e;fill-opacity:1;stroke-width:3.24665"
        id="rect699"
        width="51.378078"
        height="11.11202"
-       x="44.499756"
+       x="46.785469"
        y="87.296364"
-       ry="5.5560098" /><rect
-       style="fill:#47244c;fill-opacity:1;stroke-width:3.24665"
-       id="rect701"
-       width="51.378078"
-       height="11.11202"
-       x="62.684841"
-       y="111.67471"
        ry="5.5560098" /><image
        width="27"
        height="50"
        preserveAspectRatio="none"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAyCAYAAACtd6CrAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
-jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVFhH7c0xFQAgDMTQgha8sODfTmFAQujA
-y1/utrQ5VkaRfreEMYQxhDGEMYQxhDGEMYQxhDGEMYQxhDGEMYQxhDHEv7GWx/2PRWxPSgYV0PC0
-agAAAABJRU5ErkJggg==
-"
+       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAyCAYAAACtd6CrAAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVFhH7c0xFQAgDMTQgha8sODfTmFAQujA y1/utrQ5VkaRfreEMYQxhDGEMYQxhDGEMYQxhDGEMYQxhDGEMYQxhDHEv7GWx/2PRWxPSgYV0PC0 agAAAABJRU5ErkJggg== "
        id="image867"
        x="125.77567"
        y="-24.710367" /></g></svg>

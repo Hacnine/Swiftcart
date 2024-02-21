@@ -28,7 +28,7 @@ const PriceSlider = () => {
 
   return (
     <div>
-      <h1 className="text-lg font-bold mb-5 text-gray-800">Prices</h1>
+      <h1 className="text-lg font-bold mb-2 text-gray-800">Prices</h1>
       <Box sx={{ width: "80%" }}>
         <Slider
           getAriaLabel={() => "Price range"}

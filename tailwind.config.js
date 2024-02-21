@@ -16,6 +16,7 @@ export default {
     extend: {
       colors: {
         darkpurple: '#47244c',
+        lightPurple:'#6b1396ff',
         orchid:'#DA70D6'
       },
       backgroundImage: {
