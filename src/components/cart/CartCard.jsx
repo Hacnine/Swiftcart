@@ -45,7 +45,7 @@ const CartCard = ({
   };
 
   return (
-    <tbody className="">
+    <tbody className=" font-medium">
       <tr className="border-b table-row">
         <td className="  border-b-2 text-center">
           <div className="flex items-center">

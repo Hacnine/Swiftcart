@@ -11,27 +11,23 @@ import { useCartContext } from "../context/cartContext";
 import { useProductContext } from "../context/ProductContext";
 
 const ProductCard = (product) => {
-  // console.log('product', product)
-  const { id, name, image, category, price, amount,check, stock, hideTag } = product;
+  console.log("product", product);
+  const { id, name, image, category, price, hideTag } = product;
 
-  const { addCartItem,cartProducts } = useCartContext();
-  let { quantity } = useProductContext();
+  const { addCartItem, cartProducts } = useCartContext();
   const handleClick = () => {
-    console.log(amount);
     sentCartItem();
   };
 
   const sentCartItem = () => {
-    console.log("Alahmdulillah");
-
     const existingProduct = cartProducts.find((item) => item.id === id);
 
     if (existingProduct) {
     } else {
-
       const newProducts = cartProducts.find((item) => item.id === id);
-      console.log(newProducts)
-      // If product is not in the cart, add it
+      let amount = 1;
+      let stock = 5;
+      let check = 9;
       addCartItem(id, name, image, amount, check, price, stock);
     }
   };

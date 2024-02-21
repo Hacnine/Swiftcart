@@ -27,13 +27,13 @@ const SingleProduct = () => {
     reviews,
     image,
   } = singleProduct;
-  console.log('singleProduct',singleProduct)
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
   }, []);
   if (isSingleLoading) {
     return <Loading/>;
   }
+
 
   return (
     <div className="mb-36">
