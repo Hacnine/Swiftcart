@@ -37,3 +37,8 @@
     width: 48px;
   }
 }
+
+
+.home {
+  overflow: hidden;
+}

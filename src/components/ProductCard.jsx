@@ -11,13 +11,26 @@ import { useCartContext } from "../context/cartContext";
 import { useProductContext } from "../context/ProductContext";
 
 const ProductCard = (product) => {
-  console.log("product", product);
-  const { id, name, image, category, price, hideTag } = product;
+  const { id, name,description, image, category, price, hideTag } = product;
 
-  const { addCartItem, cartProducts } = useCartContext();
-  const handleClick = () => {
-    sentCartItem();
+  const { addCartItem, cartProducts,wishlistProducts,addWishListItem } = useCartContext();
+
+
+
+  
+  const sentWishListItem = () => {
+    const existingProduct = wishlistProducts.find((item) => item.id === id);
+
+    if (existingProduct) {
+    } else {
+
+      let check = 'white';
+      addWishListItem(id, name, image,description, price);
+    }
+
+    console.log('wishlistProducts',wishlistProducts)
   };
+
 
   const sentCartItem = () => {
     const existingProduct = cartProducts.find((item) => item.id === id);
@@ -27,7 +40,7 @@ const ProductCard = (product) => {
       const newProducts = cartProducts.find((item) => item.id === id);
       let amount = 1;
       let stock = 5;
-      let check = 9;
+      let check ='white';
       addCartItem(id, name, image, amount, check, price, stock);
     }
   };
@@ -39,12 +52,12 @@ const ProductCard = (product) => {
           <NavLink to={`/singleproduct/${id}`}>
             <img src={image} alt={category} className="" />
           </NavLink>
-          <div className=" product-effect group-hover:scale-105   w-full    items-center hover:justify-center hidden md:flex">
+          <div className=" product-effect group-hover:scale-105   w-full    items-center hover:justify-center flex">
             <div className=" ">
-              <IconButton color="error" onClick={() => handleClick()}>
+              <IconButton color="error" onClick={() => sentCartItem()}>
                 <ShoppingBasket />
               </IconButton>
-              <IconButton color="error" onClick={() => handleClick()}>
+              <IconButton color="error" onClick={() => sentWishListItem ()}>
                 <Favorite />
               </IconButton>
             </div>
@@ -60,11 +73,13 @@ const ProductCard = (product) => {
             <p className=" sm:text-sm text-xs font-bold text-purple-950 capitalize">
               {name}
             </p>
+
+            <div className=" gap-0.5 flex items-start mt-1 justify-center"><img src="/public/images/taka.svg" className="w-3" alt="" />
             <p className=" font-semibold sm:text-sm text-xs text-red-600">
               {" "}
-              <span className="  text-xl font-bold ">৳</span>
               {Math.round(price / 100)}
             </p>
+          </div>
           </div>
         </NavLink>
       </div>

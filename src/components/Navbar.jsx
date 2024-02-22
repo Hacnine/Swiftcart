@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <>
       <Headroom>
-        <div className="wrapper">
+        <div className="wrapper max-w-[1368px] mx-auto  w-[90%]">
           <div className="bg-slate-200 between px-4 rounded-b-3xl shadow-md shadow-slate-600">
             <div className=" pr-2 border-r border-gray-300">
               <Button

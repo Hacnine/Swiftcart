@@ -6,7 +6,7 @@ const NavbarPopup = ({ open, onClose, children }) => {
       onClick={onClose}
       className={`
   fixed inset-0 flex justify-center items-center transition-colors z-50
-  ${open ? "visible bg-black/20" : "invisible"}
+  ${open ? "block bg-black/20" : "hidden"}
   `}
     >
       <div

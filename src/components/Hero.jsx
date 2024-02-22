@@ -3,7 +3,7 @@ import PurpleBtn from "./PurpleBtn";
 
 const Hero = () => {
   return (
-    <section className="">
+    <section className="max-w-[1368px] mx-auto ">
       <HeroSlider />
     </section>
   );

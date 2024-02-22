@@ -91,11 +91,11 @@ const SearchBar = () => {
             </button>
 
             {anchorEl && (
-              <div className="absolute -left-2 w-40 z-40 py-2 top-10 bg-white rounded-md">
+              <div className="absolute left-0 w-40 z-40 py-2 top-10 bg-white rounded-md">
                 {categoryOnlyData.map((category, index) => (
                   <p
                     key={index}
-                    className="cursor-pointer text-gray-600 hover:bg-darkpurple hover:text-white px-1.5 my-0.5"
+                    className="cursor-pointer text-gray-600 hover:bg-darkpurple hover:text-white px-3 my-0.5 capitalize font-normal"
                     onClick={() => {
                       handleClose(category);
                     }}>

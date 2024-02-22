@@ -31,6 +31,14 @@ const cartReducer = (state, action) => {
         cartProducts: [...state.cartProducts, action.payload],
       };
 
+      case "ADD_TO_WISHLIST":
+    console.log('Bismillah', action.payload)
+
+        return{
+          ...state,
+          wishlistProducts: [...state.wishlistProducts, action.payload],
+        }
+
     case "DELETE_ITEM":
       const updatedCart = state.cartProducts.filter(
         (item) => item.id !== action.payload

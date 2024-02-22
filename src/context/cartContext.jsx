@@ -6,10 +6,11 @@ const CartContext = createContext();
 const initialState = {
   allProducts: [],
   cartProducts: [],
+  wishlistProducts: [],
   quantity: 1,
   color: "",
-  total:0,
-  totalItem:0
+  total: 0,
+  totalItem: 0,
 };
 const CartContextProvider = ({ children }) => {
   const { products } = useProductContext();
@@ -34,6 +35,19 @@ const CartContextProvider = ({ children }) => {
         check,
         price,
         stock,
+      },
+    });
+  };
+
+  const addWishListItem = (id, name, image, check, price) => {
+    dispatch({
+      type: "ADD_TO_WISHLIST",
+      payload: {
+        id,
+        name,
+        image,
+        check,
+        price,
       },
     });
   };
@@ -75,6 +89,7 @@ const CartContextProvider = ({ children }) => {
         calculateTotalPrice,
         deleteCartItem,
         deleteAllCartItem,
+        addWishListItem,
       }}
     >
       {children}
