@@ -1,27 +1,4 @@
-import {
-  Box,
-  Button,
-  Checkbox,
-  Container,
-  FormControlLabel,
-  Grid,
-  IconButton,
-  InputAdornment,
-  Link,
-  Paper,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
-import React, { SyntheticEvent } from "react";
-import { Customization } from "../GlobalStyle";
-import {
-  AccountCircle,
-  Facebook,
-  FacebookRounded,
-  Google,
-  Twitter,
-} from "@mui/icons-material";
+
 import {SignIn} from "../components/signinandup/index"
 
 const SignInPage = () => {
