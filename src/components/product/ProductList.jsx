@@ -7,7 +7,6 @@ import Sort from "./Sort";
 const ProductList = () => {
   const { isLoading, products } = useProductContext();
   const { allProducts, filterProducts, sortingData } = useFilterContext();
-
   const [gridView, setGridView] = useState(true);
 
   return (
