@@ -15,7 +15,7 @@ Additionally, users have the ability to add or remove items from their cart and 
 
 
 ### 🌟 Features
-Multi-Page Structure: Includes key pages such as:
+
 • **Sticky Header**
 * **Restful api**
 * **Sidebar**
