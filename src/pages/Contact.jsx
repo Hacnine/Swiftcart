@@ -5,8 +5,8 @@ import { newsForm, message } from "../constants";
 const Contact = () => {
   return (
     <div>
-      <div className="mx-auto flex items-center justify-center flex-col gap-5 mb-36">
-        <h1 className=" my-10 text-2xl text-purple-950 mx-auto">
+      <div className="mx-auto flex items-center justify-center flex-col gap-5 mb-36 mt-20">
+        <h1 className=" my-10  mx-auto font-sans font-bold text-5xl mt-28 text-gray-900 py-2 bg-white/40 w-full text-center mb-10">
           Contact Page
         </h1>
         <iframe

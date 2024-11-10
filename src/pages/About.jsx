@@ -23,7 +23,7 @@ const About = () => {
     // Add other styles for child elements if necessary
   };
   return (
-    <div className="mb-36  ">
+    <div className="mb-32 my-5 ">
       <div className="   bg-center bg-no-repeat pt-5 "style={styles.container}>
         <p className="  font-sans font-bold text-5xl mt-28 text-gray-900 py-2 bg-white/40 w-full text-center mb-10">
           About Us
