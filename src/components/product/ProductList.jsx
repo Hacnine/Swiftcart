@@ -10,7 +10,7 @@ const ProductList = () => {
   const [gridView, setGridView] = useState(true);
 
   return (
-    <div className=" bg-white">
+    <div className=" ">
 
 
       <Sort

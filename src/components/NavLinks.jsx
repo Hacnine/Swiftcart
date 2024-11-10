@@ -21,6 +21,9 @@ const NavLinks = ({className}) => {
         <li className=" hover:text-gray-500 ">
           <NavLink to="/contact">Contact</NavLink>
         </li>
+        <li className=" hover:text-gray-500 ">
+          <NavLink to="/profile">Profile</NavLink>
+        </li>
         {/* <li className=" hover:text-gray-500 ">
           <NavLink to="/signin" className=" rounded-md text-white">
             <PurpleBtn children={"Sign In"} className={'text-sm'} />

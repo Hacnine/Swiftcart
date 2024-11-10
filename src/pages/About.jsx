@@ -12,20 +12,11 @@ import ShortReview from "../components/about/ShortReview";
 import background from '../assets/about-us.svg'
 
 const About = () => {
-  const styles = {
-    container: {
-      background: `url(${background})`,
-      backgroundSize: 'cover', // Adjust as needed (e.g., 'contain', '50% 50%', etc.)
-      backgroundRepeat: 'no-repeat',
-      height: '400px', // Set the desired height
-      // Add other styling properties as needed
-    },
-    // Add other styles for child elements if necessary
-  };
+
   return (
-    <div className="mb-32 my-5 ">
-      <div className="   bg-center bg-no-repeat pt-5 "style={styles.container}>
-        <p className="  font-sans font-bold text-5xl mt-28 text-gray-900 py-2 bg-white/40 w-full text-center mb-10">
+    <div className="mb-32 ">
+      <div className="   bg-center bg-no-repeat pt-4 pb-10 bg-about">
+        <p className="  font-sans font-bold text-5xl mt-28 text-gray-900 py-2 bg-white/40 w-full text-center mb-40">
           About Us
         </p>
 
@@ -50,8 +41,8 @@ const About = () => {
           />
         </div>
       </div>
-      <div className=" flex items-center justify-center ">
-      <div className=" grid lg:grid-cols-4 md:grid-cols-2 gap-3 mt-14 wrapper">
+      <div className=" flex items-center justify-centergap-5">
+      <div className=" grid lg:grid-cols-4 md:grid-cols-2 md:gap-24 gap-3 mt-14 wrapper">
         {shortReview.map((element, index) => (
           <ShortReview {...element} />
         ))}
@@ -63,7 +54,7 @@ const About = () => {
 
         <p className="font-bold text-[46px] ">Meet Our Team</p>
 
-        <div className="pt-10  grid lg:grid-cols-4 md:grid-cols-2 gap-10 ">
+        <div className="pb-16 w-full bg-slate-200 grid lg:grid-cols-4 md:grid-cols-2 gap-10 ">
           {memberInfo.map((item) => (
             <ProfileCard {...item} />
           ))}
@@ -77,7 +68,7 @@ const About = () => {
 
         <p className="font-bold text-[46px] mb-8">Happy Clients</p>
 
-        <div className="  grid grid-cols-4 wrapper gap-20">
+        <div className="  grid grid-cols-4 wrapper gap-20 ">
           {partners.map((image) => (
             <img src={image.image} alt="partners" />
           ))}

@@ -2,7 +2,7 @@ import React from "react";
 
 const ShortReview = ({ number, review }) => {
   return (
-    <div className="center gap-1 p-2 bg-orange-100 rounded-full w-fit">
+    <div className="center gap-1 mx- p-2 bg-orange-100 rounded-full w-fit">
       <div className="p-2 bg-neutral-100 rounded-l-full center">
         <p className="text-3xl font-bold text-slate-900 w-24">{number}</p>
       </div>

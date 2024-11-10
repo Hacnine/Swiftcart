@@ -14,7 +14,7 @@ const CommonSlider = () => {
     dots: true,
     infinite: true,
     speed: 500,
-
+    arrows:false,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -52,7 +52,7 @@ const CommonSlider = () => {
   };
   return (
     // sm:bg-green-600 md:bg-yellow-900 lg:bg-red-500
-    <div className=" h-[466px] px-14 mt-20 bg-no-repeat bg-center  gap-2 border-gray-700 bg-slate-900 py-16 mr-5 w-full ">
+    <div className=" h-[466px] bg-testimonial px-14 mt-20 bg-no-repeat bg-center  gap-2 border-gray-700 bg-slate-900 py-16 mr-5 w-full ">
       <div className=" container mx-auto">
         <Slider {...settings}>
           <TestimonialCard

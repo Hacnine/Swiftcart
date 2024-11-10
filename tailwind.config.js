@@ -21,7 +21,7 @@ export default {
       },
       backgroundImage: {
         'header':"url('src/assets/header-bg.svg')",
-        'about': "url('src/assets/about-us.svg')",
+        'about': "url('src/assets/about-us.png')",
         'testimonial':"url('src/assets/testimonial.png')",
 
       },
