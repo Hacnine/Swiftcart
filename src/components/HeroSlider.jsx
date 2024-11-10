@@ -38,7 +38,7 @@ const HeroSlider = () => {
                 backgroundColor: dot.props.className.includes("slick-active")
                   ? "white"
                   : "", // Change color based on active/inactive state
-                  cursor: 'pointer',
+                cursor: 'pointer',
               }}
             ></li>
           ))}
@@ -48,13 +48,18 @@ const HeroSlider = () => {
   };
 
   return (
-    <div className="w-full h-full ">
-      <Slider {...settings}>
+    <>
+      <div className="w-full h-full px-1 sm:hidden visible">
         <HeroImage image={heroimage1} visible />
-        <HeroImage image={heroimage2} />
-        <HeroImage image={heroimage4} />
-      </Slider>
-    </div>
+      </div>
+      <div className="w-full h-full px-1 sm:block hidden">
+        <Slider {...settings}>
+          <HeroImage image={heroimage1} visible />
+          <HeroImage image={heroimage2} />
+          <HeroImage image={heroimage4} />
+        </Slider>
+      </div>
+    </>
   );
 };
 
