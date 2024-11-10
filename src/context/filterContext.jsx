@@ -1,3 +1,4 @@
+"use client";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { useProductContext } from "./ProductContext";
 import filterReducer from "../reducer/filterReducer";
@@ -25,19 +26,10 @@ const FilterContextProvider = ({ children }) => {
     dispatch({ type: "FILTER_PRODUCTS" });
   }, [state.filter]);
 
-  // useEffect(() => {
-  //   dispatch({ type: "SEARCHED_PRODUCTS" });
-  // }, [state.filter]);
-
 
   const sortingData = (data) => {
     dispatch({ type: "GET_SORT_VALUE", payload: data });
   };
-
-  // const setDispatch = (type, payload) =>{
-
-  //   return dispatch({type: `SET_${type}_DATA`, payload: payload})
-  // }
 
   const updateFilterValue = (event) => {
     let name = event.target.name;

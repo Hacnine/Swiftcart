@@ -11,13 +11,10 @@ import { useCartContext } from "../context/cartContext";
 import { useProductContext } from "../context/ProductContext";
 
 const ProductCard = (product) => {
-  const { id, name,description, image, category, price, hideTag } = product;
+  const { id, name, description, image, category, price, hideTag } = product;
+  const { addCartItem, cartProducts, wishlistProducts, addWishListItem } = useCartContext();
+  console.log(product)
 
-  const { addCartItem, cartProducts,wishlistProducts,addWishListItem } = useCartContext();
-
-
-
-  
   const sentWishListItem = () => {
     const existingProduct = wishlistProducts.find((item) => item.id === id);
 
@@ -25,10 +22,10 @@ const ProductCard = (product) => {
     } else {
 
       let check = 'white';
-      addWishListItem(id, name, image,description, price);
+      addWishListItem(id, name, image, description, price);
     }
 
-    console.log('wishlistProducts',wishlistProducts)
+    console.log('wishlistProducts', wishlistProducts)
   };
 
 
@@ -40,7 +37,7 @@ const ProductCard = (product) => {
       const newProducts = cartProducts.find((item) => item.id === id);
       let amount = 1;
       let stock = 5;
-      let check ='white';
+      let check = 'white';
       addCartItem(id, name, image, amount, check, price, stock);
     }
   };
@@ -57,7 +54,7 @@ const ProductCard = (product) => {
               <IconButton color="error" onClick={() => sentCartItem()}>
                 <ShoppingBasket />
               </IconButton>
-              <IconButton color="error" onClick={() => sentWishListItem ()}>
+              <IconButton color="error" onClick={() => sentWishListItem()}>
                 <Favorite />
               </IconButton>
             </div>
@@ -75,11 +72,11 @@ const ProductCard = (product) => {
             </p>
 
             <div className=" gap-0.5 flex items-start mt-1 justify-center"><img src="/public/images/taka.svg" className="w-3" alt="" />
-            <p className=" font-semibold sm:text-sm text-xs text-red-600">
-              {" "}
-              {Math.round(price / 100)}
-            </p>
-          </div>
+              <p className=" font-semibold sm:text-sm text-xs text-red-600">
+                {" "}
+                {Math.round(price / 100)}
+              </p>
+            </div>
           </div>
         </NavLink>
       </div>
